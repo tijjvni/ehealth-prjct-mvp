@@ -4,11 +4,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\API\SpecialistsController;
 use App\Http\Controllers\API\FacilitiesController;
 use App\Http\Controllers\API\RatingsController;
 
-Route::post('/login',[AuthController::class, 'login']);
+Route::post('/login',[AccountController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function(){
 

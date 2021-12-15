@@ -2,33 +2,60 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
-use Stevebauman\Location\Facades\Location;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+
 
 class AccountController extends Controller
 {
-    /**
+    use ApiResponse;
 
-     * Display a listing of the resource.
-
-     *
-
-     * @return \Illuminate\Http\Response
-
-     */
-
-    public function index(Request $request)
-
+    public function register(Request $request)
     {
+        $attr = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|unique:users,email',
+            'password' => 'required|string|min:6|confirmed'
+        ]);
 
-//         dd($geoLocation = Location::get(request()->ip()));
+        $user = User::create([
+            'name' => $attr['name'],
+            'password' => bcrypt($attr['password']),
+            'email' => $attr['email']
+        ]);
 
-//         $city = $geoLocation->cityName;
-        $city = "Kaduna";
-
-          
-
-        return view('account', compact('city'));
-
+        return $this->success([
+            'token' => $user->createToken('API Token')->plainTextToken
+        ]);
     }
+
+
+    public function login(Request $request)
+    {
+        $attr = $request->validate([
+            'email' => 'required|string|email|',
+            'password' => 'required|string|min:6'
+        ]);
+
+        if (!Auth::attempt($attr)) {
+            return $this->error('Credentials not match', 401);
+        }
+
+        return $this->success([
+            'token' => auth()->user()->createToken('API Token')->plainTextToken
+        ]);
+    }
+
+    public function logout()
+    {
+        auth()->user()->tokens()->delete();
+
+        return [
+            'message' => 'Tokens Revoked'
+        ];
+    }
+    
 }
