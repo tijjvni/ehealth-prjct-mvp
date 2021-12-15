@@ -38,14 +38,14 @@ class Handler extends ExceptionHandler
             //
         });
 
-        $this->renderable(function (Throwable $e) {
-            //
-            if ($e) {
-                return response()->json([
-                    'error' => $e->getMessage(),
-                ], $e->getCode());
-            }
-        });
+        // $this->renderable(function (Throwable $e) {
+        //     //
+        //     if ($e) {
+        //         return response()->json([
+        //             'error' => $e->getMessage(),
+        //         ], $e->getCode());
+        //     }
+        // });
     
     }
 }
