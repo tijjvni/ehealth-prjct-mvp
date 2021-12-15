@@ -37,7 +37,7 @@ class AccountController extends Controller
     public function login(LoginRequest $request)
     {
 
-        if (!Auth::attempt($attr)) {
+        if (!Auth::attempt($request)) {
             return $this->error('Credentials not match', 401);
         }
 
