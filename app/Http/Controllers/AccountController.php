@@ -43,16 +43,14 @@ class AccountController extends Controller
 
         return $this->success([
             'token' => auth()->user()->createToken('API Token')->plainTextToken
-        ],'Logged in successfully.');
+        ],'Logged in successfully. Token generated');
     }
 
     public function logout()
     {
         auth()->user()->tokens()->delete();
 
-        return [
-            'message' => 'Tokens Revoked'
-        ];
+        return $this->success([],'Logged out. Token Revoked');        
     }
     
 }

@@ -14,6 +14,8 @@ Route::post('/register','AccountController@register');
 
 Route::middleware('auth:sanctum')->group(function(){
 
+    Route::post('/logout','AccountController@logout');
+
     Route::prefix('/specialists')->group(function(){
     
         Route::GET('/', [SpecialistsController::class, 'index']);
