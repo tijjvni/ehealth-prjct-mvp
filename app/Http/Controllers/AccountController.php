@@ -36,7 +36,7 @@ class AccountController extends Controller
     public function login(Request $request)
     {
         return $this->success([
-            'token' => auth()->user()->createToken('API Token')->plainTextToken
+            'token' => "auth()->user()->createToken('API Token')->plainTextToken"
         ]);
         
         $attr = $request->validate([
