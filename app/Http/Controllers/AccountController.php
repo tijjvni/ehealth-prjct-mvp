@@ -35,9 +35,10 @@ class AccountController extends Controller
 
     public function login(Request $request)
     {
+        return "something";
         $attr = $request->validate([
-            'email' => 'required|string|email|',
-            'password' => 'required|string|min:6'
+            'email' => 'required|email|',
+            'password' => 'required|min:6'
         ]);
 
         if (!Auth::attempt($attr)) {
