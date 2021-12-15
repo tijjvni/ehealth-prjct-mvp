@@ -9,10 +9,10 @@ use App\Http\Controllers\API\SpecialistsController;
 use App\Http\Controllers\API\FacilitiesController;
 use App\Http\Controllers\API\RatingsController;
 
-Route::post('/login',[AccountController::class, 'login']);
-Route::post('/register',[AccountController::class, 'register']);
+Route::post('/login','AccountController@login');
+Route::post('/register','AccountController@register');
 
-// Route::middleware('auth:sanctum')->group(function(){
+Route::middleware('auth:sanctum')->group(function(){
 
     Route::prefix('/specialists')->group(function(){
     
@@ -32,4 +32,4 @@ Route::post('/register',[AccountController::class, 'register']);
         Route::PUT('/{id}', [FacilitiesController::class, 'update']);
     
     });
-// });
+});
