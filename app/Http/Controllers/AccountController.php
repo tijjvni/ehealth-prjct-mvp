@@ -44,6 +44,10 @@ class AccountController extends Controller
             'password' => 'required|min:6'
         ]);
 
+        return $this->success([
+            'attr' => $attr
+        ]);
+
         if (!Auth::attempt($attr)) {
             return $this->error('Credentials not match', 401);
         }
