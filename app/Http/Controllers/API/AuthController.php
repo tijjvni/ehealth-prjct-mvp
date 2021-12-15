@@ -1,6 +1,6 @@
  
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use App\Models\User;
 use App\Traits\ApiResponse;
@@ -8,8 +8,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
+use App\Http\Requests\LoginRequest;
+
 class AuthController extends Controller
 {
+ 
     use ApiResponse;
 
     public function register(Request $request)
@@ -28,33 +31,27 @@ class AuthController extends Controller
 
         return $this->success([
             'token' => $user->createToken('API Token')->plainTextToken
-        ]);
+        ],'Account created successfully.');
     }
 
 
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
-        $attr = $request->validate([
-            'email' => 'required|string|email|',
-            'password' => 'required|string|min:6'
-        ]);
 
-        if (!Auth::attempt($attr)) {
+        if (!Auth::attempt($request->only(['email','password']))) {
             return $this->error('Credentials not match', 401);
         }
 
         return $this->success([
             'token' => auth()->user()->createToken('API Token')->plainTextToken
-        ]);
+        ],'Logged in successfully. Token generated');
     }
 
     public function logout()
     {
         auth()->user()->tokens()->delete();
 
-        return [
-            'message' => 'Tokens Revoked'
-        ];
-    }
+        return $this->success([],'Logged out. Token Revoked');        
+    }    
 
 }

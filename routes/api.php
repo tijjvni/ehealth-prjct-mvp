@@ -3,26 +3,26 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\SpecialistsController;
 use App\Http\Controllers\API\FacilitiesController;
 use App\Http\Controllers\API\RatingsController;
 
-Route::post('/login','AccountController@login');
-Route::post('/register','AccountController@register');
+Route::post('/login','AuthController@login');
+Route::post('/register','AuthController@register');
 
 Route::middleware('auth:sanctum')->group(function(){
 
-    Route::post('/logout','AccountController@logout');
+    Route::post('/logout','AuthController@logout');
 
     Route::prefix('/specialists')->group(function(){
     
-        Route::GET('/', [SpecialistsController::class, 'index']);
-        Route::POST('/', [SpecialistsController::class, 'create']);
-        Route::GET('/{id}', [SpecialistsController::class, 'show']);
-        Route::PUT('/{id}', [SpecialistsController::class, 'update']);
-        Route::DELETE('/{id}', [SpecialistsController::class, 'destroy']);
+        Route::GET('/', 'SpecialistsController@index');
+        Route::POST('/', 'SpecialistsController@create');
+        Route::GET('/{id}', 'SpecialistsController@show');
+        Route::PUT('/{id}', 'SpecialistsController@update');
+        Route::DELETE('/{id}', 'SpecialistsController@destroy');
         
     });
     
