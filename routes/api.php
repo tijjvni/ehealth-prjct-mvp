@@ -12,7 +12,7 @@ use App\Http\Controllers\API\RatingsController;
 Route::post('/login',[AccountController::class, 'login']);
 Route::post('/register',[AccountController::class, 'register']);
 
-Route::middleware('auth:sanctum')->group(function(){
+// Route::middleware('auth:sanctum')->group(function(){
 
     Route::prefix('/specialists')->group(function(){
     
@@ -32,4 +32,4 @@ Route::middleware('auth:sanctum')->group(function(){
         Route::PUT('/{id}', [FacilitiesController::class, 'update']);
     
     });
-});
+// });
