@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
+use App\Http\Requests\LoginRequest;
 
 class AccountController extends Controller
 {
@@ -33,17 +34,8 @@ class AccountController extends Controller
     }
 
 
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
-   
-        $attr = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|min:6'
-        ]);
-
-        return $this->success([
-            'attr' => $attr
-        ]);
 
         if (!Auth::attempt($attr)) {
             return $this->error('Credentials not match', 401);
