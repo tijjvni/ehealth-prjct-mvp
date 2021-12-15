@@ -8,6 +8,8 @@ use App\Http\Controllers\API\SpecialistsController;
 use App\Http\Controllers\API\FacilitiesController;
 use App\Http\Controllers\API\RatingsController;
 
+Route::post('/login',[AuthController::class, 'login']);
+
 Route::middleware('auth:sanctum')->group(function(){
 
     Route::prefix('/specialists')->group(function(){
