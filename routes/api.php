@@ -16,6 +16,8 @@ Route::middleware('auth:sanctum')->group(function(){
 
     Route::post('/logout','AuthController@logout');
 
+    Route::get('/users/me','UserController@me');
+
     Route::prefix('/specialists')->group(function(){
     
         Route::GET('/', 'SpecialistsController@index');
