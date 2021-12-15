@@ -40,7 +40,7 @@ class AccountController extends Controller
         ]);
         
         $attr = $request->validate([
-            'email' => 'required|email|',
+            'email' => 'required|email',
             'password' => 'required|min:6'
         ]);
 
