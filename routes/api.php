@@ -7,7 +7,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\SpecialistsController;
 use App\Http\Controllers\Api\FacilitiesController;
-// use App\Http\Controllers\API\RatingsController;
+use App\Http\Controllers\Api\UserController;
 
 Route::post('/login','AuthController@login');
 Route::post('/register','AuthController@register');
