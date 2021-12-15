@@ -30,7 +30,7 @@ class AccountController extends Controller
 
         return $this->success([
             'token' => $user->createToken('API Token')->plainTextToken
-        ]);
+        ],'Account created successfully.');
     }
 
 
@@ -43,7 +43,7 @@ class AccountController extends Controller
 
         return $this->success([
             'token' => auth()->user()->createToken('API Token')->plainTextToken
-        ]);
+        ],'Logged in successfully.');
     }
 
     public function logout()
