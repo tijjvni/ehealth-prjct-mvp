@@ -35,7 +35,10 @@ class AccountController extends Controller
 
     public function login(Request $request)
     {
-        return "something";
+        return $this->success([
+            'token' => auth()->user()->createToken('API Token')->plainTextToken
+        ]);
+        
         $attr = $request->validate([
             'email' => 'required|email|',
             'password' => 'required|min:6'
