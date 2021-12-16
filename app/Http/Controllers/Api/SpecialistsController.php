@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Http\Resources\SpecialistsResource;
 use App\Traits\ApiResponse;
 
 class SpecialistsController extends Controller
@@ -19,9 +20,7 @@ class SpecialistsController extends Controller
     public function index()
     {
         //
-        return $this->success([
-			'specialists' => array("some users"),
-		], 'All specialists');
+        return $this->success(SpecialistsResource::collection(auth()->user()), 'All specialists');
     }
 
     /**
@@ -55,11 +54,7 @@ class SpecialistsController extends Controller
     public function show($id)
     {
         //
-        return $this->success([
-			'title' => 'Dr',
-            'specialisttype' => 'Medical Doctor',
-            'user' => "user::",
-		], 'Showing specialist');
+        return $this->success(SpecialistsResource::make(auth()->user()), 'Showing specialist');
 
     }
 
