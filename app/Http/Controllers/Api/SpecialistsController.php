@@ -20,7 +20,7 @@ class SpecialistsController extends Controller
     {
         //
         return $this->success([
-			'specialists' => collect(
+			'specialists' => collect([
                 [0] => array(		
                     'title' => 'Dr',
                     'type' => 'Medical Doctor',
@@ -37,7 +37,7 @@ class SpecialistsController extends Controller
                         'email' => 'abu@gmail.com'
                         )
                     ),
-            ),
+            ]),
 		], 'All specialists');
     }
 
