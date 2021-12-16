@@ -23,7 +23,7 @@ class SpecialistsController extends Controller
 			'specialists' => collect([
                 [0] => array(		
                     'title' => 'Dr',
-                    'type' => 'Medical Doctor',
+                    'specialisttype' => 'Medical Doctor',
                     'user' => array(
                         'name' => 'Ahmad Mahmud',
                         'email' => 'ahmad@gmail.com'
@@ -31,7 +31,7 @@ class SpecialistsController extends Controller
                     ),
                 [1] => array(			
                     'title' => 'Mr',
-                    'type' => 'Dental Surgeon',
+                    'specialisttype' => 'Dental Surgeon',
                     'user' => array(
                         'name' => 'Abubakar Sadiq',
                         'email' => 'abu@gmail.com'
@@ -74,7 +74,7 @@ class SpecialistsController extends Controller
         //
         return $this->success([
 			'title' => 'Dr',
-            'type' => 'Medical Doctor',
+            'specialisttype' => 'Medical Doctor',
 			'user' => array(
                 'name' => 'Hamza Yusuf',
                 'email' => 'hamza@gmail.com'
