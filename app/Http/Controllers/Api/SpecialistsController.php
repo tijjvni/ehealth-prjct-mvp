@@ -20,18 +20,7 @@ class SpecialistsController extends Controller
     {
         //
         return $this->success([
-			'specialists' => collect([
-                [0] => array(		
-                    'title' => 'Dr',
-                    'specialisttype' => 'Medical Doctor',
-                    'user' => "user::",
-                ),
-                [1] => array(			
-                    'title' => 'Mr',
-                    'specialisttype' => 'Dental Surgeon',
-                    'user' => "user::",
-                )
-            ]),
+			'specialists' => array("some users"),
 		], 'All specialists');
     }
 
