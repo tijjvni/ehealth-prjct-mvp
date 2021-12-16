@@ -31,7 +31,6 @@ class SpecialistsController extends Controller
     {
         //
         return $this->success('Create', 'New specialist');
-
     }
 
     /**
