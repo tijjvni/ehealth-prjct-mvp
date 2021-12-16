@@ -1,6 +1,6 @@
-<?php
+ 
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use App\Models\User;
 use App\Traits\ApiResponse;
@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests\LoginRequest;
 
-class AccountController extends Controller
+class AuthController extends Controller
 {
+ 
     use ApiResponse;
 
     public function register(Request $request)
@@ -51,6 +52,6 @@ class AccountController extends Controller
         auth()->user()->tokens()->delete();
 
         return $this->success([],'Logged out. Token Revoked');        
-    }
-    
+    }    
+
 }
