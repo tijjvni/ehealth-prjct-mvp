@@ -63,7 +63,7 @@ class SpecialistsController extends Controller
         return $this->success([
 			'title' => 'Dr',
             'type' => 'Medical Doctor',
-			'user' => response()->json([
+			'user' => json_endode([
                 'name' => 'Hamza Yusuf',
                 'email' => 'hamza@gmail.com'
             ])
