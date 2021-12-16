@@ -9,11 +9,11 @@ use App\Http\Controllers\Api\FacilitiesController;
 use App\Http\Controllers\Api\UserController;
 
 Route::post('/login','AuthController@login');
-Route::post('/register','App\Http\Controllers\AuthController@register');
+Route::post('/register','AuthController@register');
 
 Route::middleware('auth:sanctum')->group(function(){
 
-    Route::post('/logout','..\AuthController@logout');
+    Route::post('/logout','AuthController@logout');
 
     Route::get('/users/me','UserController@me');
 

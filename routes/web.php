@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LogoutController;
-use App\Http\Controllers\AccountController;
+// use App\Http\Controllers\AccountController;
 
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Auth\Passwords\Confirm;
@@ -78,7 +78,7 @@ Route::middleware('auth')->group(function(){
         return view('appointments');
     })->name('appointments');
 
-    Route::get('/account', [AccountController::class, 'index'])->name('account');
+    Route::get('/account', [\App\Http\Controllers\AccountController::class, 'index'])->name('account');
     Route::get('/facility', Facility::class)->name('facility');
     Route::get('/specialist', Specialist::class)->name('specialist');
 
