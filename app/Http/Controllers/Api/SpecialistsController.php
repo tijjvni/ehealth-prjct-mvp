@@ -20,7 +20,7 @@ class SpecialistsController extends Controller
     public function index()
     {
         //
-        return $this->success(SpecialistsResource::collection(auth()->user()), 'All specialists');
+        return $this->success(SpecialistsResource::collection(null), 'All specialists');
     }
 
     /**
