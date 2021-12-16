@@ -3,18 +3,17 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\AccountController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\SpecialistsController;
 use App\Http\Controllers\Api\FacilitiesController;
 use App\Http\Controllers\Api\UserController;
 
 Route::post('/login','AuthController@login');
-Route::post('/register','AuthController@register');
+Route::post('/register','App\Http\Controllers\AuthController@register');
 
 Route::middleware('auth:sanctum')->group(function(){
 
-    Route::post('/logout','AuthController@logout');
+    Route::post('/logout','App\Http\Controllers\AuthController@logout');
 
     Route::get('/users/me','UserController@me');
 
