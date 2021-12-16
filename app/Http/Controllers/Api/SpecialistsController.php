@@ -21,22 +21,14 @@ class SpecialistsController extends Controller
         //
         return $this->success([
 			'specialists' => collect([
-                [0] => array(		
+                [0] => collect(		
                     'title' => 'Dr',
                     'specialisttype' => 'Medical Doctor',
-                    'user' => array(
-                        'name' => 'Ahmad Mahmud',
-                        'email' => 'ahmad@gmail.com'
-                        )
-                    ),
+                    'user' => "user::",
                 [1] => array(			
                     'title' => 'Mr',
                     'specialisttype' => 'Dental Surgeon',
-                    'user' => array(
-                        'name' => 'Abubakar Sadiq',
-                        'email' => 'abu@gmail.com'
-                        )
-                    ),
+                    'user' => "user::",
             ]),
 		], 'All specialists');
     }
@@ -75,10 +67,7 @@ class SpecialistsController extends Controller
         return $this->success([
 			'title' => 'Dr',
             'specialisttype' => 'Medical Doctor',
-			'user' => array(
-                'name' => 'Hamza Yusuf',
-                'email' => 'hamza@gmail.com'
-            )
+            'user' => "user::",
 		], 'Showing specialist');
 
     }
