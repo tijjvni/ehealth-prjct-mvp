@@ -19,7 +19,14 @@ class SpecialistsController extends Controller
     public function index()
     {
         //
-        return $this->success('List', 'All specialists');
+        return $this->success([
+			'title' => 'Dr',
+            'type' => 'Medical Doctor',
+			'user' => response()->json([
+                'name' => 'Hamza Yusuf',
+                'email' => 'hamza@gmail.com'
+            ])
+		], 'All specialists');
     }
 
     /**
@@ -53,7 +60,14 @@ class SpecialistsController extends Controller
     public function show($id)
     {
         //
-        return $this->success('Show', 'Showing specialist');
+        return $this->success([
+			'title' => 'Dr',
+            'type' => 'Medical Doctor',
+			'user' => response()->json([
+                'name' => 'Hamza Yusuf',
+                'email' => 'hamza@gmail.com'
+            ])
+		], 'Showing specialist');
 
     }
 
