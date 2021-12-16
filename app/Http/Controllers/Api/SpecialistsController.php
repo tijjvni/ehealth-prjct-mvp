@@ -20,24 +20,24 @@ class SpecialistsController extends Controller
     {
         //
         return $this->success([
-			'specialists' => collect(
+			'specialists' => array(
 
-                [			
+                [0] => array([			
                     'title' => 'Dr',
                     'type' => 'Medical Doctor',
-                    'user' => json_decode(json_encode([
+                    'user' => array([
                         'name' => 'Ahmad Mahmud',
                         'email' => 'ahmad@gmail.com'
                     ]))
-                ],
-                [			
+                ]),
+                [1] => array([			
                     'title' => 'Mr',
                     'type' => 'Dental Surgeon',
-                    'user' => json_decode(json_encode([
+                    'user' => array([
                         'name' => 'Abubakar Sadiq',
                         'email' => 'abu@gmail.com'
                     ]))
-                ],
+                ]),
 
             )
 		], 'All specialists');
@@ -77,7 +77,7 @@ class SpecialistsController extends Controller
         return $this->success([
 			'title' => 'Dr',
             'type' => 'Medical Doctor',
-			'user' => json_decode(json_encode([
+			'user' => array([
                 'name' => 'Hamza Yusuf',
                 'email' => 'hamza@gmail.com'
             ]))
