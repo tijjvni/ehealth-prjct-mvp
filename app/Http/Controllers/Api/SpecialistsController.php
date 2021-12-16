@@ -25,18 +25,18 @@ class SpecialistsController extends Controller
                 [			
                     'title' => 'Dr',
                     'type' => 'Medical Doctor',
-                    'user' => json_encode([
+                    'user' => json_decode(json_encode([
                         'name' => 'Ahmad Mahmud',
                         'email' => 'ahmad@gmail.com'
-                    ])
+                    ]))
                 ],
                 [			
                     'title' => 'Mr',
                     'type' => 'Dental Surgeon',
-                    'user' => json_encode([
+                    'user' => json_decode(json_encode([
                         'name' => 'Abubakar Sadiq',
                         'email' => 'abu@gmail.com'
-                    ])
+                    ]))
                 ],
 
             )
@@ -77,10 +77,10 @@ class SpecialistsController extends Controller
         return $this->success([
 			'title' => 'Dr',
             'type' => 'Medical Doctor',
-			'user' => json_encode([
+			'user' => json_decode(json_encode([
                 'name' => 'Hamza Yusuf',
                 'email' => 'hamza@gmail.com'
-            ])
+            ]))
 		], 'Showing specialist');
 
     }
