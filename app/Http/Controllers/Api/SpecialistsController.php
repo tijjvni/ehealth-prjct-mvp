@@ -25,10 +25,12 @@ class SpecialistsController extends Controller
                     'title' => 'Dr',
                     'specialisttype' => 'Medical Doctor',
                     'user' => "user::",
+                ),
                 [1] => array(			
                     'title' => 'Mr',
                     'specialisttype' => 'Dental Surgeon',
                     'user' => "user::",
+                )
             ]),
 		], 'All specialists');
     }
