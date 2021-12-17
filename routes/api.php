@@ -8,31 +8,37 @@ use App\Http\Controllers\Api\SpecialistsController;
 use App\Http\Controllers\Api\FacilitiesController;
 use App\Http\Controllers\Api\UserController;
 
-Route::post('/login','AuthController@login');
-Route::post('/register','AuthController@register');
 
-Route::middleware('auth:sanctum')->group(function(){
+Route::group([
+    'namespace' => 'Api\V1\Admin', 
+], function () {
 
-    Route::post('/logout','AuthController@logout');
-
-    Route::get('/users/me','UserController@me');
-
-    Route::prefix('/specialists')->group(function(){
+    Route::post('/login','AuthController@login');
+    Route::post('/register','AuthController@register');
     
-        Route::GET('/', 'SpecialistsController@index');
-        Route::POST('/', 'SpecialistsController@create');
-        Route::GET('/{id}', 'SpecialistsController@show');
-        Route::PUT('/{id}', 'SpecialistsController@update');
-        Route::DELETE('/{id}', 'SpecialistsController@destroy');
+    Route::middleware('auth:sanctum')->group(function(){
+    
+        Route::post('/logout','AuthController@logout');
+    
+        Route::get('/users/me','UserController@me');
+    
+        Route::prefix('/specialists')->group(function(){
         
-    });
-    
-    Route::prefix('/facilities')->group(function(){
+            Route::GET('/', 'SpecialistsController@index');
+            Route::POST('/', 'SpecialistsController@create');
+            Route::GET('/{id}', 'SpecialistsController@show');
+            Route::PUT('/{id}', 'SpecialistsController@update');
+            Route::DELETE('/{id}', 'SpecialistsController@destroy');
+            
+        });
         
-        Route::GET('/', [FacilitiesController::class, 'index']);
-        Route::POST('/', [FacilitiesController::class, 'post']);
-        Route::GET('/{id}', [FacilitiesController::class, 'show']);
-        Route::PUT('/{id}', [FacilitiesController::class, 'update']);
-    
-    });
+        Route::prefix('/facilities')->group(function(){
+            
+            Route::GET('/', [FacilitiesController::class, 'index']);
+            Route::POST('/', [FacilitiesController::class, 'post']);
+            Route::GET('/{id}', [FacilitiesController::class, 'show']);
+            Route::PUT('/{id}', [FacilitiesController::class, 'update']);
+        
+        });
+    });    
 });
