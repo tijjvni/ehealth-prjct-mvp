@@ -10,7 +10,7 @@ use App\Http\Controllers\Api\UserController;
 
 
 Route::group([
-    'namespace' => 'Api\V1\Admin', 
+    'namespace' => 'Api\', 
 ], function () {
 
     Route::post('/login','AuthController@login');
