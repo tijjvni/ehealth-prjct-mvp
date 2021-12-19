@@ -5,7 +5,17 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Http\Resources\SpecialistsResource;
+// models
+use App\Models\Specialist;
+
+// Requests
+use App\Http\Requests\StoreSpecialist;
+use App\Http\Requests\UpdateSpecialist;
+
+// resources
+use App\Http\Resources\SpecialistResource;
+
+// traits
 use App\Traits\ApiResponse;
 
 class SpecialistsController extends Controller
@@ -20,7 +30,7 @@ class SpecialistsController extends Controller
     public function index()
     {
         //
-        return $this->success(SpecialistsResource::make(null), 'All specialists');
+        return $this->success(SpecialistResource::make(null), 'All specialists');
     }
 
     /**
@@ -28,10 +38,9 @@ class SpecialistsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
-        return $this->success('Create', 'New specialist');
     }
 
     /**
@@ -40,9 +49,20 @@ class SpecialistsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreSpecialist $request)
     {
-        //
+        //creating specialist
+        try {
+            $specialist = new Specialist;
+            $specialist->title = $request->title;
+            $specialist->type_id = $request->type;
+            $specialist->user_id = $request->user;
+    
+            return $this->success(SpecialistResource::make($specialist), 'created specialist');
+        }
+        catch (exception $e) {
+            return $this->error($e->getMessage(),$e->getCode());
+        }        
     }
 
     /**
@@ -54,7 +74,7 @@ class SpecialistsController extends Controller
     public function show($id)
     {
         //
-        return $this->success(SpecialistsResource::make(auth()->user()), 'Showing specialist');
+        return $this->success(SpecialistResource::make(auth()->user()), 'Showing specialist');
 
     }
 
@@ -76,9 +96,22 @@ class SpecialistsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateSpecialist $request, $id)
     {
-        //
+        //updating specialist
+        try {
+            $specialist = Specialist::findOrFail($request->specialist);
+            $specialist->title = $request->title;
+            $specialist->type_id = $request->type;
+
+            $specialist->save();
+
+            return $this->success(SpecialistResource::make($specialist), 'updated specialist');
+        }
+        catch (exception $e) {
+            return $this->error($e->getMessage(),$e->getCode());
+        }        
+
     }
 
     /**

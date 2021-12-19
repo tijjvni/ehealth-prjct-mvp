@@ -16,7 +16,6 @@ class CreateFacilityTypesTable extends Migration
         Schema::create('facility_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('address');
         });
     }
 

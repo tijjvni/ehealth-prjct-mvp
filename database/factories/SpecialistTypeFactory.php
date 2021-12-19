@@ -13,8 +13,12 @@ class SpecialistTypeFactory extends Factory
      */
     public function definition()
     {
+
+        $specialistTypes = array('Doctor','Nurse','Pharmacy','Lab Scientist');
+
         return [
             //
+            'name' => $specialistTypes[array_rand($specialistTypes,1)],           
         ];
     }
 }

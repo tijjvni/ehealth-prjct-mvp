@@ -8,13 +8,6 @@ use Illuminate\Support\Str;
 // define('RDS_DB_NAME', $_SERVER['RDS_DB_NAME']);
 
 
-define('DB_CONNECTION', 'pgsql');
-
-define('RDS_HOSTNAME', 'ec2-3-229-127-203.compute-1.amazonaws.com');
-define('RDS_USERNAME', 'htnibitycdlnih');
-define('RDS_PASSWORD', '4a4a9b38e862a3dc99cf7ac725db9916260544e1b994bf756f807153ef447a0c');
-define('RDS_DB_NAME', 'dd6hg8i6us9e7o');
-define('RDS_PORT', '5432');
 
 return [
 
@@ -29,7 +22,7 @@ return [
     |
     */
 
-    'default' => DB_CONNECTION,
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -59,12 +52,12 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'port' => RDS_PORT,
+            'port' => env('DATABASE_PORT', '5432'),
             'url' => env('DATABASE_URL'),
-            'host' => RDS_HOSTNAME,
-            'database' => RDS_DB_NAME,
-            'username' => RDS_USERNAME,
-            'password' => RDS_PASSWORD,            
+            'host' => env('DATABASE_HOST', 'ec2-3-229-127-203.compute-1.amazonaws.com'),
+            'database' => env('DATABASE_NAME', 'dd6hg8i6us9e7o'), 
+            'username' => env('DATABASE_USERNAME', 'htnibitycdlnih'),
+            'password' => env('DATABASE_PASSWORD', '4a4a9b38e862a3dc99cf7ac725db9916260544e1b994bf756f807153ef447a0c'),            
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -80,11 +73,11 @@ return [
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
-            'host' => RDS_HOSTNAME,
-            'port' => RDS_PORT,
-            'database' => RDS_DB_NAME,
-            'username' => RDS_USERNAME,
-            'password' => RDS_PASSWORD,     
+            'host' => env('DATABASE_HOST', 'ec2-3-229-127-203.compute-1.amazonaws.com'),
+            'port' => env('DATABASE_PORT', '5432'),
+            'database' => env('DATABASE_NAME', 'dd6hg8i6us9e7o'), 
+            'username' => env('DATABASE_USERNAME', 'htnibitycdlnih'),
+            'password' => env('DATABASE_PASSWORD', '4a4a9b38e862a3dc99cf7ac725db9916260544e1b994bf756f807153ef447a0c'),            
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,

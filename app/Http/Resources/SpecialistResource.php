@@ -5,8 +5,9 @@ namespace App\Http\Resources;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 use App\Http\Resources\SpecialistTypeResource;
+use App\Http\Resources\UserResource;
 
-class SpecialistsResource extends JsonResource
+class SpecialistResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,8 +19,8 @@ class SpecialistsResource extends JsonResource
     {
         return [
 			'title' => $this->title,
-            'type' => SpecialistTypeResource::$this->type,
-            'user' => "user::",
+            'type' => new SpecialistTypeResource($this->type),
+            'user' => new UserResource($this->user),
         ];
         return parent::toArray($request);
     }

@@ -15,6 +15,7 @@ class FacilityTypeFactory extends Factory
     {
         return [
             //
+            'name' => 'name',           
         ];
     }
 }

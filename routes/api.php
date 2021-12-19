@@ -25,7 +25,7 @@ Route::group([
         Route::prefix('/specialists')->group(function(){
         
             Route::GET('/', 'SpecialistsController@index');
-            Route::POST('/', 'SpecialistsController@create');
+            Route::POST('/', 'SpecialistsController@store');
             Route::GET('/{id}', 'SpecialistsController@show');
             Route::PUT('/{id}', 'SpecialistsController@update');
             Route::DELETE('/{id}', 'SpecialistsController@destroy');
