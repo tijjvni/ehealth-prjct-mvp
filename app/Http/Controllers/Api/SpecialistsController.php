@@ -26,23 +26,18 @@ class SpecialistsController extends Controller
     public function index()
     {
         //
-        return $this->success(SpecialistResource::make(null), 'All specialists');
+        return $this->success(SpecialistResource::collection(Specialist::all()), 'All specialists');
     }
-
-    public function create(Request $request)
-    {
-        //
-    }
-
+    
     public function store(StoreSpecialist $request)
     {
         //creating specialist
         try {
-            $specialist = new Specialist;
-            $specialist->title = $request->title;
-            $specialist->type_id = $request->type;
-            $specialist->user_id = auth()->user();
-    
+            $specialist = auth()->user()->specialist()->create([
+                'title' => $request->title,
+                'type_id' => $request->type
+            ]);
+
             return $this->success(SpecialistResource::make($specialist), 'created specialist');
         }
         catch (exception $e) {

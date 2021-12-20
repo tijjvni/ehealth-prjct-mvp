@@ -31,14 +31,16 @@ Route::group([
             Route::DELETE('/{id}', 'SpecialistsController@destroy');
             
         });
-        
+           
         Route::prefix('/facilities')->group(function(){
-            
-            Route::GET('/', [FacilitiesController::class, 'index']);
-            Route::POST('/', [FacilitiesController::class, 'post']);
-            Route::GET('/{id}', [FacilitiesController::class, 'show']);
-            Route::PUT('/{id}', [FacilitiesController::class, 'update']);
         
+            Route::GET('/', 'FacilitiesController@index');
+            Route::POST('/', 'FacilitiesController@store');
+            Route::GET('/{id}', 'FacilitiesController@show');
+            Route::PUT('/{id}', 'FacilitiesController@update');
+            Route::DELETE('/{id}', 'FacilitiesController@destroy');
+            
         });
+        
     });    
 });

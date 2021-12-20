@@ -13,9 +13,12 @@ class FacilityTypeFactory extends Factory
      */
     public function definition()
     {
+
+        $facilityTypes = array('Hospital','Clinic','Pharmacy','Lab','Maternity Home');
+
         return [
             //
-            'name' => 'name',           
+            'name' => $facilityTypes[array_rand($facilityTypes,1)],           
         ];
     }
 }

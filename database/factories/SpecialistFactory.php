@@ -16,9 +16,9 @@ class SpecialistFactory extends Factory
      */
     public function definition()
     {
-        $titles = array('Alh.','Dr','Miss','Malam','Mr','Haj.');
+        // $titles = array('Alh.','Dr','Miss','Malam','Mr','Haj.');
         return [
-            'title' => $titles[array_rand($titles,1)], 
+            'title' => $this->faker->title, 
             'user_id' => User::factory()->create(),
             'type_id' => SpecialistType::factory()->create(),
         ];

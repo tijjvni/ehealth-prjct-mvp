@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
+use App\Models\User;
+use App\Models\Specialist;
+
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -26,5 +29,9 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         //
+
+        Gate::define('update-specialist', function (User $user, Specialist $specialist) {
+            return $user->id === $specialist->user_id;
+        });        
     }
 }

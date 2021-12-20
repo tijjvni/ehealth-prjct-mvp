@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+use App\Models\FacilityType;
+
 class FacilityFactory extends Factory
 {
     /**
@@ -14,7 +16,10 @@ class FacilityFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->company,
+            'address' => $this->faker->address, 
+            'user_id' => NULL,
+            'type_id' => FacilityType::factory()->create(),
         ];
     }
 }

@@ -9,6 +9,11 @@ use Illuminate\Contracts\Validation\Validator;
 class UpdateSpecialist extends FormRequest
 {
  
+    // public function authorize()
+    // {
+    //     return Gate::allows('update-specialist',Specialist::find($this->specialist));   
+    // }
+
     public function rules()
     {
        return [

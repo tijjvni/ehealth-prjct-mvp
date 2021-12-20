@@ -4,6 +4,9 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
+use App\Http\Resources\FacilityTypeResource;
+use App\Http\Resources\UserResource;
+
 class FacilityResource extends JsonResource
 {
     /**
@@ -14,6 +17,10 @@ class FacilityResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+			'name' => $this->name,
+            'type' => new FacilityTypeResource($this->type),
+            'user' => new UserResource($this->user),
+        ];
     }
 }

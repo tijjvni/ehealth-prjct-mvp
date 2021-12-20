@@ -14,7 +14,7 @@ class SpecialistTypeFactory extends Factory
     public function definition()
     {
 
-        $specialistTypes = array('Doctor','Nurse','Pharmacy','Lab Scientist');
+        $specialistTypes = array('Doctor','Nurse','Pharmacist','Lab Scientist','MidWife');
 
         return [
             //

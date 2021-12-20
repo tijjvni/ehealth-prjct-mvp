@@ -12,7 +12,16 @@ test('specialists', function () {
     expect(true)->toBeTrue();
 });
 
-it('does not create a specialist without request body', function () {
+it('can get all specialists list', function () {
+    $user = User::factory()->create();
+    $token = $user->createToken('API Token')->plainTextToken;
+
+    $response = $this->withHeader('Authorization', 'Bearer ' . $token)
+                ->getJson('/api/specialists', []);
+    $response->assertStatus(200);
+});
+
+it('can not create a specialist without request body', function () {
     $user = User::factory()->create();
     $token = $user->createToken('API Token')->plainTextToken;
 
@@ -32,6 +41,18 @@ it('can creates a new specialists', function () {
                     'user' => $user->id,
                     'type' => $specialistType
                 ]);
+    $response->assertStatus(200);
+});
+
+it('can show a specialist', function () {
+    $specialist = Specialist::factory()->create();
+    $token = $specialist->user->createToken('API Token')->plainTextToken;
+
+    // dd($specialist);
+    $response = $this->withHeader('Authorization', 'Bearer ' . $token)
+                ->get('/api/specialists/'.$specialist->id);
+
+    // dd($response->json());
     $response->assertStatus(200);
 });
 
@@ -57,16 +78,4 @@ it('can not update an existing specialists without required parameters', functio
                         'specialist' => $specialist->id, 
                     ]);
     $response->assertStatus(422);
-});
-
-it('can show a specialist', function () {
-    $specialist = Specialist::factory()->create();
-    $token = $specialist->user->createToken('API Token')->plainTextToken;
-
-    // dd($specialist);
-    $response = $this->withHeader('Authorization', 'Bearer ' . $token)
-                ->get('/api/specialists/'.$specialist->id);
-
-    dd($response->json());
-    $response->assertStatus(200);
 });

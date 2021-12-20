@@ -6,14 +6,15 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
-class StoreSpecialist extends FormRequest
+class StoreFacility extends FormRequest
 {
-
+  
     public function rules()
     {
        return [
-            'title' => 'required|min:1',
-            'type' => 'required|exists:specialist_types,id',
+        'name' => 'required|min:3',
+        'addresss' => 'required|min:3',
+        'type' => 'required|exists:facility_types,id',
        ];
     }
 
