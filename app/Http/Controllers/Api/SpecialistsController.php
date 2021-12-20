@@ -53,7 +53,6 @@ class SpecialistsController extends Controller
     public function show($id)
     {
         //showing specialist 
-        $id = 40;
         try {
             $specialist = Specialist::findOrFail($id);
             // if($specialist){
