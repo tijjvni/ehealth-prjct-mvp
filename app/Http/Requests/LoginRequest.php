@@ -25,5 +25,12 @@ class LoginRequest extends FormRequest
             'error'      => $validator->errors()
         ],422));
     }    
+
+    public function messages()
+    {
+        return [
+            'email.exists' => 'The email address provided does not exists',
+        ];
+    }    
         
 }

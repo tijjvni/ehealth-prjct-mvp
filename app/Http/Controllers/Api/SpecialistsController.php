@@ -41,7 +41,7 @@ class SpecialistsController extends Controller
             $specialist = new Specialist;
             $specialist->title = $request->title;
             $specialist->type_id = $request->type;
-            $specialist->user_id = $request->user;
+            $specialist->user_id = auth()->user();
     
             return $this->success(SpecialistResource::make($specialist), 'created specialist');
         }

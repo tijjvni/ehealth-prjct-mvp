@@ -12,7 +12,6 @@ class StoreSpecialist extends FormRequest
     {
        return [
             'title' => 'required|min:1',
-            'user' => 'required|exists:users,id',
             'type' => 'required|exists:specialist_types,id',
        ];
     }
