@@ -24,7 +24,6 @@ it('does not create a specialist without request body', function () {
 it('can creates a new specialists', function () {
     $user = User::factory()->create();
     $token = $user->createToken('API Token')->plainTextToken;
-
     $specialistType = SpecialistType::factory()->create()->id;
 
     $response = $this->withHeader('Authorization', 'Bearer ' . $token)
@@ -58,4 +57,16 @@ it('can not update an existing specialists without required parameters', functio
                         'specialist' => $specialist->id, 
                     ]);
     $response->assertStatus(422);
+});
+
+it('can show a specialist', function () {
+    $specialist = Specialist::factory()->create();
+    $token = $specialist->user->createToken('API Token')->plainTextToken;
+
+    // dd($specialist);
+    $response = $this->withHeader('Authorization', 'Bearer ' . $token)
+                ->get('/api/specialists/'.$specialist->id);
+
+    dd($response->json());
+    $response->assertStatus(200);
 });

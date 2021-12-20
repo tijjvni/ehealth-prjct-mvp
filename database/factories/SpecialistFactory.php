@@ -18,7 +18,7 @@ class SpecialistFactory extends Factory
     {
         $titles = array('Alh.','Dr','Miss','Malam','Mr','Haj.');
         return [
-            'title' => $titles[array_rand($titles,1)],
+            'title' => $titles[array_rand($titles,1)], 
             'user_id' => User::factory()->create(),
             'type_id' => SpecialistType::factory()->create(),
         ];
