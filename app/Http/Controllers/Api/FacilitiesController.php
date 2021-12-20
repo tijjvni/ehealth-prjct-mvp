@@ -38,6 +38,7 @@ class FacilitiesController extends Controller
 
             $facility->save(); 
 
+            // FacilityResource::make($facility);
             return $this->success(FacilityResource::make($facility), 'created specialist');
         }
         catch (exception $e) {

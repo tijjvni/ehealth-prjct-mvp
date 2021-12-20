@@ -13,13 +13,15 @@ class StoreFacility extends FormRequest
     {
        return [
         'name' => 'required|min:3',
-        'addresss' => 'required|min:3',
+        'address' => 'required|min:3',
         'type' => 'required|exists:facility_types,id',
        ];
     }
 
     public function failedValidation(Validator $validator)
     {
+
+        // dd($validator->errors());
         throw new HttpResponseException(response()->json([
             'success'   => false,
             'message'   => 'Validation errors',

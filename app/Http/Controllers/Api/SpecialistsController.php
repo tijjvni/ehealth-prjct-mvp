@@ -38,6 +38,7 @@ class SpecialistsController extends Controller
                 'type_id' => $request->type
             ]);
 
+            dd(SpecialistResource::make($specialist));
             return $this->success(SpecialistResource::make($specialist), 'created specialist');
         }
         catch (exception $e) {
