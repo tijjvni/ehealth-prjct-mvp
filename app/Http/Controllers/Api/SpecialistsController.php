@@ -55,7 +55,7 @@ class SpecialistsController extends Controller
         //showing specialist 
         $id = 40;
         try {
-            $specialist = Specialist::find($id);
+            $specialist = Specialist::findOrFail($id);
             if($specialist){
                 return $this->success(SpecialistResource::make($specialist), 'Showing '.$id.' specialist');    
             }else {
