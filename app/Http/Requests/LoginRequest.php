@@ -29,7 +29,7 @@ class LoginRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.exists' => 'The email address provided does not exists',
+            'email.exists' => 'Invalid login details',
         ];
     }    
         
