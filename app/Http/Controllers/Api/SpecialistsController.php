@@ -56,11 +56,11 @@ class SpecialistsController extends Controller
         $id = 40;
         try {
             $specialist = Specialist::findOrFail($id);
-            if($specialist){
+            // if($specialist){
                 return $this->success(SpecialistResource::make($specialist), 'Showing '.$id.' specialist');    
-            }else {
-                return $this->error("Specialist not found invalid ID provided",404);
-            }
+            // }else {
+            //     return $this->error("Specialist not found invalid ID provided",404);
+            // }
         }catch (exception $e) {
             return $this->error($e->getMessage(),$e->getCode());
         }   
