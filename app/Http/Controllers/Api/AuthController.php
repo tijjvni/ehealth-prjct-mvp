@@ -45,7 +45,7 @@ class AuthController extends Controller
         }
 
         return $this->success([
-            'user' => 'user' => UserResource::make($user),
+            'user' => UserResource::make($user),
             'token' => auth()->user()->createToken('API Token')->plainTextToken
         ],'Logged in successfully. Token generated');
     }
