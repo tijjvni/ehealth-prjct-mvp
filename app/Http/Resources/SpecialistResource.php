@@ -19,8 +19,8 @@ class SpecialistResource extends JsonResource
     {
         return [
 			'title' => $this->title,
-            'type' => new SpecialistTypeResource($this->type),
-            'user' => new UserResource($this->user),
+            'type' => SpecialistTypeResource::make($this->type),
+            'user' => UserResource::make($this->user),
         ];
 
         return parent::toArray($request);

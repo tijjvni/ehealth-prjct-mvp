@@ -22,7 +22,7 @@ class FacilityResource extends JsonResource
         return [
 			'name' => $this->name,
             'type' => FacilityTypeResource::make(FacilityType::find($this->type)),
-            'user' => new UserResource($this->user),
+            'user' => UserResource::make($this->user),
         ];
 
         return parent::toArray($request);

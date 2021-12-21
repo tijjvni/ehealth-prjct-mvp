@@ -23,6 +23,17 @@ class SpecialistsController extends Controller
 
     use ApiResponse;
     
+
+    /**
+     * Display all specialists
+     * 
+     * Get a listings of specialists 
+     * 
+     * @apiResourceCollection App\Http\Resources\SpecialistResource
+     * @apiResourceModel App\Models\Specialist 
+     * 
+     * @return ResourceCollection
+     */
     public function index()
     {
         //
@@ -38,7 +49,7 @@ class SpecialistsController extends Controller
                 'type_id' => $request->type
             ]);
 
-            dd(SpecialistResource::make($specialist));
+            // dd(SpecialistResource::make($specialist));
             return $this->success(SpecialistResource::make($specialist), 'created specialist');
         }
         catch (exception $e) {
