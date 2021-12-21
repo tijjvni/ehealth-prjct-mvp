@@ -8,8 +8,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
-    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+    <link rel="stylesheet" href="{{ asset("vendor/scribe/css/theme-default.style.css") }}" media="screen">
+    <link rel="stylesheet" href="{{ asset("vendor/scribe/css/theme-default.print.css") }}" media="print">
 
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 
@@ -30,9 +30,9 @@
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
-    <script src="../docs/js/tryitout-3.19.1.js"></script>
+    <script src="{{ asset("vendor/scribe/js/tryitout-3.19.1.js") }}"></script>
 
-    <script src="../docs/js/theme-default-3.19.1.js"></script>
+    <script src="{{ asset("vendor/scribe/js/theme-default-3.19.1.js") }}"></script>
 
 </head>
 
@@ -41,7 +41,7 @@
 <a href="#" id="nav-button">
     <span>
         MENU
-        <img src="../docs/images/navbar.png" alt="navbar-image" />
+        <img src="{{ asset("vendor/scribe/images/navbar.png") }}" alt="navbar-image" />
     </span>
 </a>
 <div class="tocify-wrapper">
@@ -126,8 +126,8 @@
             </div>
 
             <ul class="toc-footer" id="toc-footer">
-                            <li><a href="../docs/collection.json">View Postman collection</a></li>
-                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="{{ route("scribe.postman") }}">View Postman collection</a></li>
+                            <li><a href="{{ route("scribe.openapi") }}">View OpenAPI spec</a></li>
                             <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
                     </ul>
         <ul class="toc-footer" id="last-updated">
@@ -145,7 +145,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <blockquote>
 <p>Base URL</p>
 </blockquote>
-<pre><code class="language-yaml">http://localhost</code></pre>
+<pre><code class="language-yaml">http://medhive-mvp.herokuapp.com/</code></pre>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
 <p>This API is not authenticated.</p>
@@ -167,14 +167,14 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/docs" \
+    --get "http://medhive-mvp.herokuapp.com/api/docs" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/docs"
+    "http://medhive-mvp.herokuapp.com/api/docs"
 );
 
 const headers = {
@@ -210,9 +210,9 @@ access-control-allow-origin: *
   &lt;meta charset=&quot;UTF-8&quot;&gt;
   &lt;title&gt;MedHive Api Documentation&lt;/title&gt;
   &lt;link href=&quot;https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700&quot; rel=&quot;stylesheet&quot;&gt;
-  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://localhost/docs/asset/swagger-ui.css?v=b47dcdb59251cf1254ee38395c18b5b9&quot; &gt;
-  &lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;http://localhost/docs/asset/favicon-32x32.png?v=40d4f2c38d1cd854ad463f16373cbcb6&quot; sizes=&quot;32x32&quot; /&gt;
-  &lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;http://localhost/docs/asset/favicon-16x16.png?v=f0ae831196d55d8f4115b6c5e8ec5384&quot; sizes=&quot;16x16&quot; /&gt;
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://medhive-mvp.herokuapp.com/docs/asset/swagger-ui.css?v=b47dcdb59251cf1254ee38395c18b5b9&quot; &gt;
+  &lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;http://medhive-mvp.herokuapp.com/docs/asset/favicon-32x32.png?v=40d4f2c38d1cd854ad463f16373cbcb6&quot; sizes=&quot;32x32&quot; /&gt;
+  &lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;http://medhive-mvp.herokuapp.com/docs/asset/favicon-16x16.png?v=f0ae831196d55d8f4115b6c5e8ec5384&quot; sizes=&quot;16x16&quot; /&gt;
   &lt;style&gt;
     html
     {
@@ -272,19 +272,19 @@ access-control-allow-origin: *
 
 &lt;div id=&quot;swagger-ui&quot;&gt;&lt;/div&gt;
 
-&lt;script src=&quot;http://localhost/docs/asset/swagger-ui-bundle.js?v=798d369d6387e66b7278e63cb950a32f&quot;&gt; &lt;/script&gt;
-&lt;script src=&quot;http://localhost/docs/asset/swagger-ui-standalone-preset.js?v=e3a4b013757e84ad70d1ef12270ba31a&quot;&gt; &lt;/script&gt;
+&lt;script src=&quot;http://medhive-mvp.herokuapp.com/docs/asset/swagger-ui-bundle.js?v=798d369d6387e66b7278e63cb950a32f&quot;&gt; &lt;/script&gt;
+&lt;script src=&quot;http://medhive-mvp.herokuapp.com/docs/asset/swagger-ui-standalone-preset.js?v=e3a4b013757e84ad70d1ef12270ba31a&quot;&gt; &lt;/script&gt;
 &lt;script&gt;
 window.onload = function() {
   // Build a system
   const ui = SwaggerUIBundle({
     dom_id: '#swagger-ui',
 
-    url: &quot;http://localhost/docs/api-docs.json&quot;,
+    url: &quot;http://medhive-mvp.herokuapp.com/docs/api-docs.json&quot;,
     operationsSorter: null,
     configUrl: null,
     validatorUrl: null,
-    oauth2RedirectUrl: &quot;http://localhost/api/oauth2-callback&quot;,
+    oauth2RedirectUrl: &quot;http://medhive-mvp.herokuapp.com/api/oauth2-callback&quot;,
 
     requestInterceptor: function(request) {
       request.headers['X-CSRF-TOKEN'] = '';
@@ -368,14 +368,14 @@ window.onload = function() {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/oauth2-callback" \
+    --get "http://medhive-mvp.herokuapp.com/api/oauth2-callback" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/oauth2-callback"
+    "http://medhive-mvp.herokuapp.com/api/oauth2-callback"
 );
 
 const headers = {
@@ -536,19 +536,19 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/login" \
+    "http://medhive-mvp.herokuapp.com/api/login" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"erogahn@example.com\",
-    \"password\": \"\"
+    \"email\": \"lamar30@example.net\",
+    \"password\": \"yqyc\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/login"
+    "http://medhive-mvp.herokuapp.com/api/login"
 );
 
 const headers = {
@@ -557,8 +557,8 @@ const headers = {
 };
 
 let body = {
-    "email": "erogahn@example.com",
-    "password": ""
+    "email": "lamar30@example.net",
+    "password": "yqyc"
 };
 
 fetch(url, {
@@ -616,7 +616,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTapi-login"
-               value="erogahn@example.com"
+               value="lamar30@example.net"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address.</p>
@@ -626,7 +626,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="POSTapi-login"
-               value=""
+               value="yqyc"
                data-component="body" hidden>
     <br>
 <p>Must be at least 6 characters.</p>
@@ -646,20 +646,20 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/register" \
+    "http://medhive-mvp.herokuapp.com/api/register" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ztmbepxbrqarnzrucryvrcwgjurngkjscknldyzfibwyvdsjcfipcbgjckckhmpaylwfqlsfbasyofxxwoszgwfxfewhnkwipjxqhuqcudcpvjelzxvgnizaniswvksljhoatbundqxxxvqxhqwvmgqwrhtpfdtvhkfaxmomjv\",
-    \"email\": \"wallace.hessel@example.com\",
-    \"password\": \"h\"
+    \"name\": \"dkrfbqeljgcuemkmrjkhnedp\",
+    \"email\": \"walker.eldora@example.org\",
+    \"password\": \"\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/register"
+    "http://medhive-mvp.herokuapp.com/api/register"
 );
 
 const headers = {
@@ -668,9 +668,9 @@ const headers = {
 };
 
 let body = {
-    "name": "ztmbepxbrqarnzrucryvrcwgjurngkjscknldyzfibwyvdsjcfipcbgjckckhmpaylwfqlsfbasyofxxwoszgwfxfewhnkwipjxqhuqcudcpvjelzxvgnizaniswvksljhoatbundqxxxvqxhqwvmgqwrhtpfdtvhkfaxmomjv",
-    "email": "wallace.hessel@example.com",
-    "password": "h"
+    "name": "dkrfbqeljgcuemkmrjkhnedp",
+    "email": "walker.eldora@example.org",
+    "password": ""
 };
 
 fetch(url, {
@@ -728,7 +728,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-register"
-               value="ztmbepxbrqarnzrucryvrcwgjurngkjscknldyzfibwyvdsjcfipcbgjckckhmpaylwfqlsfbasyofxxwoszgwfxfewhnkwipjxqhuqcudcpvjelzxvgnizaniswvksljhoatbundqxxxvqxhqwvmgqwrhtpfdtvhkfaxmomjv"
+               value="dkrfbqeljgcuemkmrjkhnedp"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -738,7 +738,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTapi-register"
-               value="wallace.hessel@example.com"
+               value="walker.eldora@example.org"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address.</p>
@@ -748,7 +748,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="POSTapi-register"
-               value="h"
+               value=""
                data-component="body" hidden>
     <br>
 <p>Must be at least 6 characters.</p>
@@ -768,14 +768,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/logout" \
+    "http://medhive-mvp.herokuapp.com/api/logout" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/logout"
+    "http://medhive-mvp.herokuapp.com/api/logout"
 );
 
 const headers = {
@@ -846,14 +846,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/users/me" \
+    --get "http://medhive-mvp.herokuapp.com/api/users/me" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/users/me"
+    "http://medhive-mvp.herokuapp.com/api/users/me"
 );
 
 const headers = {
@@ -941,14 +941,14 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/specialists" \
+    --get "http://medhive-mvp.herokuapp.com/api/specialists" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/specialists"
+    "http://medhive-mvp.herokuapp.com/api/specialists"
 );
 
 const headers = {
@@ -974,33 +974,33 @@ fetch(url, {
         {
             &quot;title&quot;: &quot;Prof.&quot;,
             &quot;type&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Doctor&quot;
+                &quot;id&quot;: 3,
+                &quot;name&quot;: &quot;Nurse&quot;
             },
             &quot;user&quot;: {
-                &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;Harrison Bahringer&quot;,
-                &quot;email&quot;: &quot;nicolette64@example.org&quot;,
-                &quot;email_verified_at&quot;: &quot;2021-12-21T09:29:13.000000Z&quot;,
+                &quot;id&quot;: 4,
+                &quot;name&quot;: &quot;Dr. Ewell Williamson&quot;,
+                &quot;email&quot;: &quot;dbailey@example.com&quot;,
+                &quot;email_verified_at&quot;: &quot;2021-12-21T09:49:45.000000Z&quot;,
                 &quot;display_picture&quot;: null,
-                &quot;created_at&quot;: &quot;2021-12-21T09:29:13.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2021-12-21T09:29:13.000000Z&quot;
+                &quot;created_at&quot;: &quot;2021-12-21T09:49:45.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2021-12-21T09:49:45.000000Z&quot;
             }
         },
         {
-            &quot;title&quot;: &quot;Mr.&quot;,
+            &quot;title&quot;: &quot;Prof.&quot;,
             &quot;type&quot;: {
-                &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;MidWife&quot;
+                &quot;id&quot;: 4,
+                &quot;name&quot;: &quot;Lab Scientist&quot;
             },
             &quot;user&quot;: {
-                &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;Dane Watsica&quot;,
-                &quot;email&quot;: &quot;juliana.pfannerstill@example.net&quot;,
-                &quot;email_verified_at&quot;: &quot;2021-12-21T09:29:14.000000Z&quot;,
+                &quot;id&quot;: 5,
+                &quot;name&quot;: &quot;Mr. Sven Conn DVM&quot;,
+                &quot;email&quot;: &quot;carter.volkman@example.org&quot;,
+                &quot;email_verified_at&quot;: &quot;2021-12-21T09:49:46.000000Z&quot;,
                 &quot;display_picture&quot;: null,
-                &quot;created_at&quot;: &quot;2021-12-21T09:29:14.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2021-12-21T09:29:14.000000Z&quot;
+                &quot;created_at&quot;: &quot;2021-12-21T09:49:46.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2021-12-21T09:49:46.000000Z&quot;
             }
         }
     ]
@@ -1061,19 +1061,19 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/specialists" \
+    "http://medhive-mvp.herokuapp.com/api/specialists" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
     \"title\": \"\",
-    \"type\": \"quisquam\"
+    \"type\": \"non\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/specialists"
+    "http://medhive-mvp.herokuapp.com/api/specialists"
 );
 
 const headers = {
@@ -1083,7 +1083,7 @@ const headers = {
 
 let body = {
     "title": "",
-    "type": "quisquam"
+    "type": "non"
 };
 
 fetch(url, {
@@ -1151,7 +1151,7 @@ fetch(url, {
                 <input type="text"
                name="type"
                data-endpoint="POSTapi-specialists"
-               value="quisquam"
+               value="non"
                data-component="body" hidden>
     <br>
 
@@ -1171,14 +1171,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/specialists/5" \
+    --get "http://medhive-mvp.herokuapp.com/api/specialists/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/specialists/5"
+    "http://medhive-mvp.herokuapp.com/api/specialists/16"
 );
 
 const headers = {
@@ -1257,7 +1257,7 @@ access-control-allow-origin: *
                 <input type="number"
                name="id"
                data-endpoint="GETapi-specialists--id-"
-               value="5"
+               value="16"
                data-component="url" hidden>
     <br>
 <p>The ID of the specialist.</p>
@@ -1277,20 +1277,20 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/specialists/20" \
+    "http://medhive-mvp.herokuapp.com/api/specialists/2" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"specialist\": \"quisquam\",
-    \"title\": \"voluptatibus\",
-    \"type\": \"quia\"
+    \"specialist\": \"laborum\",
+    \"title\": \"molestias\",
+    \"type\": \"et\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/specialists/20"
+    "http://medhive-mvp.herokuapp.com/api/specialists/2"
 );
 
 const headers = {
@@ -1299,9 +1299,9 @@ const headers = {
 };
 
 let body = {
-    "specialist": "quisquam",
-    "title": "voluptatibus",
-    "type": "quia"
+    "specialist": "laborum",
+    "title": "molestias",
+    "type": "et"
 };
 
 fetch(url, {
@@ -1359,7 +1359,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="PUTapi-specialists--id-"
-               value="20"
+               value="2"
                data-component="url" hidden>
     <br>
 <p>The ID of the specialist.</p>
@@ -1370,7 +1370,7 @@ fetch(url, {
                 <input type="text"
                name="specialist"
                data-endpoint="PUTapi-specialists--id-"
-               value="quisquam"
+               value="laborum"
                data-component="body" hidden>
     <br>
 
@@ -1380,7 +1380,7 @@ fetch(url, {
                 <input type="text"
                name="title"
                data-endpoint="PUTapi-specialists--id-"
-               value="voluptatibus"
+               value="molestias"
                data-component="body" hidden>
     <br>
 
@@ -1390,7 +1390,7 @@ fetch(url, {
                 <input type="text"
                name="type"
                data-endpoint="PUTapi-specialists--id-"
-               value="quia"
+               value="et"
                data-component="body" hidden>
     <br>
 
@@ -1410,14 +1410,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/specialists/20" \
+    "http://medhive-mvp.herokuapp.com/api/specialists/5" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/specialists/20"
+    "http://medhive-mvp.herokuapp.com/api/specialists/5"
 );
 
 const headers = {
@@ -1479,7 +1479,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="DELETEapi-specialists--id-"
-               value="20"
+               value="5"
                data-component="url" hidden>
     <br>
 <p>The ID of the specialist.</p>
@@ -1499,14 +1499,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/facilities" \
+    --get "http://medhive-mvp.herokuapp.com/api/facilities" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/facilities"
+    "http://medhive-mvp.herokuapp.com/api/facilities"
 );
 
 const headers = {
@@ -1594,12 +1594,12 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/facilities" \
+    "http://medhive-mvp.herokuapp.com/api/facilities" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"\",
-    \"address\": \"\",
+    \"name\": \"soi\",
+    \"address\": \"tog\",
     \"type\": \"quia\"
 }"
 </code></pre></div>
@@ -1607,7 +1607,7 @@ access-control-allow-origin: *
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/facilities"
+    "http://medhive-mvp.herokuapp.com/api/facilities"
 );
 
 const headers = {
@@ -1616,8 +1616,8 @@ const headers = {
 };
 
 let body = {
-    "name": "",
-    "address": "",
+    "name": "soi",
+    "address": "tog",
     "type": "quia"
 };
 
@@ -1676,7 +1676,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-facilities"
-               value=""
+               value="soi"
                data-component="body" hidden>
     <br>
 <p>Must be at least 3 characters.</p>
@@ -1686,7 +1686,7 @@ fetch(url, {
                 <input type="text"
                name="address"
                data-endpoint="POSTapi-facilities"
-               value=""
+               value="tog"
                data-component="body" hidden>
     <br>
 <p>Must be at least 3 characters.</p>
@@ -1716,14 +1716,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/facilities/16" \
+    --get "http://medhive-mvp.herokuapp.com/api/facilities/11" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/facilities/16"
+    "http://medhive-mvp.herokuapp.com/api/facilities/11"
 );
 
 const headers = {
@@ -1802,7 +1802,7 @@ access-control-allow-origin: *
                 <input type="number"
                name="id"
                data-endpoint="GETapi-facilities--id-"
-               value="16"
+               value="11"
                data-component="url" hidden>
     <br>
 <p>The ID of the facility.</p>
@@ -1822,14 +1822,14 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/facilities/9" \
+    "http://medhive-mvp.herokuapp.com/api/facilities/17" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/facilities/9"
+    "http://medhive-mvp.herokuapp.com/api/facilities/17"
 );
 
 const headers = {
@@ -1891,7 +1891,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="PUTapi-facilities--id-"
-               value="9"
+               value="17"
                data-component="url" hidden>
     <br>
 <p>The ID of the facility.</p>

@@ -27,9 +27,9 @@ endpoints:
             <meta charset="UTF-8">
             <title>MedHive Api Documentation</title>
             <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
-            <link rel="stylesheet" type="text/css" href="http://localhost/docs/asset/swagger-ui.css?v=b47dcdb59251cf1254ee38395c18b5b9" >
-            <link rel="icon" type="image/png" href="http://localhost/docs/asset/favicon-32x32.png?v=40d4f2c38d1cd854ad463f16373cbcb6" sizes="32x32" />
-            <link rel="icon" type="image/png" href="http://localhost/docs/asset/favicon-16x16.png?v=f0ae831196d55d8f4115b6c5e8ec5384" sizes="16x16" />
+            <link rel="stylesheet" type="text/css" href="http://medhive-mvp.herokuapp.com/docs/asset/swagger-ui.css?v=b47dcdb59251cf1254ee38395c18b5b9" >
+            <link rel="icon" type="image/png" href="http://medhive-mvp.herokuapp.com/docs/asset/favicon-32x32.png?v=40d4f2c38d1cd854ad463f16373cbcb6" sizes="32x32" />
+            <link rel="icon" type="image/png" href="http://medhive-mvp.herokuapp.com/docs/asset/favicon-16x16.png?v=f0ae831196d55d8f4115b6c5e8ec5384" sizes="16x16" />
             <style>
               html
               {
@@ -89,19 +89,19 @@ endpoints:
 
           <div id="swagger-ui"></div>
 
-          <script src="http://localhost/docs/asset/swagger-ui-bundle.js?v=798d369d6387e66b7278e63cb950a32f"> </script>
-          <script src="http://localhost/docs/asset/swagger-ui-standalone-preset.js?v=e3a4b013757e84ad70d1ef12270ba31a"> </script>
+          <script src="http://medhive-mvp.herokuapp.com/docs/asset/swagger-ui-bundle.js?v=798d369d6387e66b7278e63cb950a32f"> </script>
+          <script src="http://medhive-mvp.herokuapp.com/docs/asset/swagger-ui-standalone-preset.js?v=e3a4b013757e84ad70d1ef12270ba31a"> </script>
           <script>
           window.onload = function() {
             // Build a system
             const ui = SwaggerUIBundle({
               dom_id: '#swagger-ui',
 
-              url: "http://localhost/docs/api-docs.json",
+              url: "http://medhive-mvp.herokuapp.com/docs/api-docs.json",
               operationsSorter: null,
               configUrl: null,
               validatorUrl: null,
-              oauth2RedirectUrl: "http://localhost/api/oauth2-callback",
+              oauth2RedirectUrl: "http://medhive-mvp.herokuapp.com/api/oauth2-callback",
 
               requestInterceptor: function(request) {
                 request.headers['X-CSRF-TOKEN'] = '';
@@ -253,13 +253,13 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: erogahn@example.com
+        example: lamar30@example.net
         type: string
       password:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: ''
+        example: yqyc
         type: string
     responses: []
     responseFields: []
@@ -282,19 +282,19 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: ztmbepxbrqarnzrucryvrcwgjurngkjscknldyzfibwyvdsjcfipcbgjckckhmpaylwfqlsfbasyofxxwoszgwfxfewhnkwipjxqhuqcudcpvjelzxvgnizaniswvksljhoatbundqxxxvqxhqwvmgqwrhtpfdtvhkfaxmomjv
+        example: dkrfbqeljgcuemkmrjkhnedp
         type: string
       email:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: wallace.hessel@example.com
+        example: walker.eldora@example.org
         type: string
       password:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: h
+        example: ''
         type: string
     responses: []
     responseFields: []
@@ -358,7 +358,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"title":"Prof.","type":{"id":1,"name":"Doctor"},"user":{"id":2,"name":"Harrison Bahringer","email":"nicolette64@example.org","email_verified_at":"2021-12-21T09:29:13.000000Z","display_picture":null,"created_at":"2021-12-21T09:29:13.000000Z","updated_at":"2021-12-21T09:29:13.000000Z"}},{"title":"Mr.","type":{"id":2,"name":"MidWife"},"user":{"id":3,"name":"Dane Watsica","email":"juliana.pfannerstill@example.net","email_verified_at":"2021-12-21T09:29:14.000000Z","display_picture":null,"created_at":"2021-12-21T09:29:14.000000Z","updated_at":"2021-12-21T09:29:14.000000Z"}}]}'
+        content: '{"data":[{"title":"Prof.","type":{"id":3,"name":"Nurse"},"user":{"id":4,"name":"Dr. Ewell Williamson","email":"dbailey@example.com","email_verified_at":"2021-12-21T09:49:45.000000Z","display_picture":null,"created_at":"2021-12-21T09:49:45.000000Z","updated_at":"2021-12-21T09:49:45.000000Z"}},{"title":"Prof.","type":{"id":4,"name":"Lab Scientist"},"user":{"id":5,"name":"Mr. Sven Conn DVM","email":"carter.volkman@example.org","email_verified_at":"2021-12-21T09:49:46.000000Z","display_picture":null,"created_at":"2021-12-21T09:49:46.000000Z","updated_at":"2021-12-21T09:49:46.000000Z"}}]}'
         headers: []
         description: null
     responseFields: []
@@ -387,7 +387,7 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: quisquam
+        example: non
         type: string
     responses: []
     responseFields: []
@@ -408,7 +408,7 @@ endpoints:
         name: id
         description: 'The ID of the specialist.'
         required: true
-        example: 5
+        example: 16
         type: integer
     queryParameters: []
     bodyParameters: []
@@ -439,7 +439,7 @@ endpoints:
         name: id
         description: 'The ID of the specialist.'
         required: true
-        example: 20
+        example: 2
         type: integer
     queryParameters: []
     bodyParameters:
@@ -447,19 +447,19 @@ endpoints:
         name: specialist
         description: ''
         required: true
-        example: quisquam
+        example: laborum
         type: string
       title:
         name: title
         description: ''
         required: true
-        example: voluptatibus
+        example: molestias
         type: string
       type:
         name: type
         description: ''
         required: true
-        example: quia
+        example: et
         type: string
     responses: []
     responseFields: []
@@ -480,7 +480,7 @@ endpoints:
         name: id
         description: 'The ID of the specialist.'
         required: true
-        example: 20
+        example: 5
         type: integer
     queryParameters: []
     bodyParameters: []
@@ -530,13 +530,13 @@ endpoints:
         name: name
         description: 'Must be at least 3 characters.'
         required: true
-        example: ''
+        example: soi
         type: string
       address:
         name: address
         description: 'Must be at least 3 characters.'
         required: true
-        example: ''
+        example: tog
         type: string
       type:
         name: type
@@ -563,7 +563,7 @@ endpoints:
         name: id
         description: 'The ID of the facility.'
         required: true
-        example: 16
+        example: 11
         type: integer
     queryParameters: []
     bodyParameters: []
@@ -594,7 +594,7 @@ endpoints:
         name: id
         description: 'The ID of the facility.'
         required: true
-        example: 9
+        example: 17
         type: integer
     queryParameters: []
     bodyParameters: []
