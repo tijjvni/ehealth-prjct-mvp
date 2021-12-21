@@ -61,7 +61,7 @@ class AuthController extends Controller
     public function me()
     {
         return $this->success([
-            'user' => 'user' => UserResource::make(auth()->user())
+            'user' => UserResource::make(auth()->user())
         ],'Logged in user. Me');
     }    
 
