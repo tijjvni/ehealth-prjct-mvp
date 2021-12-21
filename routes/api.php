@@ -8,6 +8,13 @@ use App\Http\Controllers\Api\SpecialistsController;
 use App\Http\Controllers\Api\FacilitiesController;
 use App\Http\Controllers\Api\UserController;
 
+Route::middleware('auth')->group(function(){
+    
+    Route::get('/docs',function(){
+        return view('scribe.index');
+    })->name('api.docs');
+
+});
 
 Route::group([
     'namespace' => 'Api', 
