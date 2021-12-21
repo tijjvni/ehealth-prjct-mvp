@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
+use App\Http\Resources\UserResource;
 use App\Http\Requests\LoginRequest;
 
 class AuthController extends Controller
@@ -30,8 +31,9 @@ class AuthController extends Controller
         ]);
 
         return $this->success([
+            'user' => UserResource::make($user),
             'token' => $user->createToken('API Token')->plainTextToken
-        ],'Account created successfully.');
+        ],'Account created successfully.',201);
     }
 
 
@@ -43,6 +45,7 @@ class AuthController extends Controller
         }
 
         return $this->success([
+            'user' => 'user' => UserResource::make($user),
             'token' => auth()->user()->createToken('API Token')->plainTextToken
         ],'Logged in successfully. Token generated');
     }
@@ -52,6 +55,14 @@ class AuthController extends Controller
         auth()->user()->tokens()->delete();
 
         return $this->success([],'Logged out. Token Revoked');        
+    }   
+    
+
+    public function me()
+    {
+        return $this->success([
+            'user' => 'user' => UserResource::make(auth()->user())
+        ],'Logged in user. Me');
     }    
 
 }

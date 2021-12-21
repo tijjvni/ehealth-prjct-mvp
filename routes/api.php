@@ -8,14 +8,6 @@ use App\Http\Controllers\Api\SpecialistsController;
 use App\Http\Controllers\Api\FacilitiesController;
 use App\Http\Controllers\Api\UserController;
 
-Route::middleware('auth')->group(function(){
-    
-    Route::get('/docs',function(){
-        return view('scribe.index');
-    })->name('api.docs');
-
-});
-
 Route::group([
     'namespace' => 'Api', 
 ], function () {
@@ -27,8 +19,8 @@ Route::group([
     
         Route::post('/logout','AuthController@logout');
     
-        Route::get('/users/me','UserController@me');
-    
+        Route::get('/users/me','AuthController@me');
+
         Route::prefix('/specialists')->group(function(){
         
             Route::GET('/', 'SpecialistsController@index');
