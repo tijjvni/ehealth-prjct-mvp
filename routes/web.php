@@ -66,9 +66,9 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function(){
     
-    Route::get('/docs',function(){
+    Route::get('/doccs',function(){
         return view('scribe.index');
-    })->name('api.docs');
+    });
 
     Route::get('/home',function(){
         return view('dashboard');
