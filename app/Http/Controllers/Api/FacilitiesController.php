@@ -42,7 +42,7 @@ class FacilitiesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreFacility $request)
     {
         //create a new facility
         try {
