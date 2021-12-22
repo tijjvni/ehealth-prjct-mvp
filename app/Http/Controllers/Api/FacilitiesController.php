@@ -56,7 +56,7 @@ class FacilitiesController extends Controller
             $facility = Facility::create([
                 'name' => $request->name,
                 'address' => $request->address,
-                'type' => $request->type,
+                'type_id' => $request->type,
             ]);
             return $this->success(FacilityResource::make($facility), 'created specialist',201);
         }
