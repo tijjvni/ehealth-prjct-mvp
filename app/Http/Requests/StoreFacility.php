@@ -14,7 +14,7 @@ class StoreFacility extends FormRequest
        return [
         'name' => 'required|min:3',
         'address' => 'required|min:3',
-        'type' => 'required|exists:facility_types,id',
+        'type' => 'required|numeric|exists:facility_types,id',
        ];
     }
 
