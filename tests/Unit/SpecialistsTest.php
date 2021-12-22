@@ -41,7 +41,7 @@ it('can creates a new specialists', function () {
                     'user' => $user->id,
                     'type' => $specialistType
                 ]);
-    $response->assertStatus(200);
+    $response->assertStatus(201);
 });
 
 it('can show a specialist', function () {

@@ -45,6 +45,7 @@ it('can create a facility', function () {
                     'address' => $faker->address,
                     'type' => $facilityType,
                 ]);
-    $response->assertStatus(200);
+    $response->assertStatus(201);
+    $response->assertJson();
 });
 

@@ -27,7 +27,6 @@ Route::group([
             Route::POST('/', 'SpecialistsController@store');
             Route::GET('/{id}', 'SpecialistsController@show');
             Route::PUT('/{id}', 'SpecialistsController@update');
-            Route::DELETE('/{id}', 'SpecialistsController@destroy');
             
         });
            

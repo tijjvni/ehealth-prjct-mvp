@@ -23,7 +23,7 @@ class StoreFacility extends FormRequest
 
         // dd($validator->errors());
         throw new HttpResponseException(response()->json([
-            'success'   => false,
+            'status'   => false,
             'message'   => 'Validation errors',
             'error'      => $validator->errors()
         ],422));

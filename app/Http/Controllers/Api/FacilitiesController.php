@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -21,36 +21,75 @@ class FacilitiesController extends Controller
 {
     use ApiResponse;
 
+    /**
+     * Get all facilities
+     * 
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     * 
+     * @apiResourceCollection App\Http\Resources\FacilityResource
+     * @apiResourceModel App\Models\Facility 
+     */
     public function index()
     {
-        // get all facilities
-        return $this->success(FacilityResource::collection(Facility::all()), 'All facilities');
+        //
     }
 
-    public function store(StoreFacility $request){
-        //creating specialist
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //create a new facility
         try {
             $facility = new Facility;
             $facility->name = $request->name;
             $facility->address = $request->address;
             $facility->type_id = $request->type;
-            $facility->user_id = $request->user ?? null;
-
-            $facility->save(); 
-
-            // FacilityResource::make($facility);
-            return $this->success(FacilityResource::make($facility), 'created specialist');
+            
+            $facility->save();
+            return $this->successdd((FacilityResource::make($facility)), 'created specialist',201);
         }
         catch (exception $e) {
             return $this->error($e->getMessage(),$e->getCode());
-        }  
+        }         
     }
 
-    public function show(){
-
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
     }
 
-    public function update(){
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }

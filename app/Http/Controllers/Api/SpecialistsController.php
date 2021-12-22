@@ -49,8 +49,7 @@ class SpecialistsController extends Controller
                 'type_id' => $request->type
             ]);
 
-            // dd(SpecialistResource::make($specialist));
-            return $this->success(SpecialistResource::make($specialist), 'created specialist');
+            return $this->success(SpecialistResource::make($specialist), 'created specialist',201);
         }
         catch (exception $e) {
             return $this->error($e->getMessage(),$e->getCode());
@@ -62,23 +61,12 @@ class SpecialistsController extends Controller
         //showing specialist 
         try {
             $specialist = Specialist::findOrFail($id);
-            // if($specialist){
-                return $this->success(SpecialistResource::make($specialist), 'Showing '.$id.' specialist');    
-            // }else {
-            //     return $this->error("Specialist not found invalid ID provided",404);
-            // }
+            return $this->success(SpecialistResource::make($specialist), 'Showing '.$id.' specialist');    
         }catch (exception $e) {
             return $this->error($e->getMessage(),$e->getCode());
-        }   
-    
+        }       
     }
 
-    public function edit($id)
-    {
-        //
-    }
-
-    
     public function update(UpdateSpecialist $request, $id)
     {
         //updating specialist
@@ -96,9 +84,5 @@ class SpecialistsController extends Controller
         }        
 
     }
-
-    public function destroy($id)
-    {
-        //
-    }
+    
 }
