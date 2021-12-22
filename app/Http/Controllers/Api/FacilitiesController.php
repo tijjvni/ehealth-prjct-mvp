@@ -53,7 +53,7 @@ class FacilitiesController extends Controller
             
             $facility->save();
 
-            dd($facility);
+            // dd($facility);
             return $this->success(FacilityResource::make($facility), 'created specialist',201);
         }
         catch (exception $e) {
