@@ -53,7 +53,7 @@ class FacilitiesController extends Controller
             
             // $facility->save();
 
-            dd($request->type);
+            // dd($request->type);
             $facility = Facility::create([
                 'name' => $request->name,
                 'address' => $request->address,
