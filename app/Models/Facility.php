@@ -9,7 +9,7 @@ class Facility extends Model
 {
     use HasFactory;
 
-    protected $unguarded = [];
+    protected $guarded = [];
 
     public function user()
     {
