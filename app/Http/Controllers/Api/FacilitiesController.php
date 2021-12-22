@@ -52,6 +52,8 @@ class FacilitiesController extends Controller
             $facility->type_id = $request->type;
             
             $facility->save();
+
+            dd($facility);
             return $this->success(FacilityResource::make($facility), 'created specialist',201);
         }
         catch (exception $e) {
