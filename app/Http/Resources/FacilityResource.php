@@ -21,7 +21,7 @@ class FacilityResource extends JsonResource
     {
         return [
 			'name' => $this->name,
-            'type' => FacilityTypeResource::make(FacilityType::find($this->type)),
+            'type' => FacilityTypeResource::make($this->type),
             'user' => UserResource::make($this->user),
         ];
 
