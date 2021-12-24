@@ -10,6 +10,7 @@ use App\Models\Facility;
 
 // Requests
 use App\Http\Requests\StoreFacility;
+use App\Http\Requests\UpdateFacility;
 
 // resources
 use App\Http\Resources\FacilityResource;
@@ -30,10 +31,13 @@ class FacilitiesController extends Controller
      * 
      * @apiResourceCollection App\Http\Resources\FacilityResource
      * @apiResourceModel App\Models\Facility 
+     * 
+     * @return ResourceCollection
      */
     public function index()
     {
         //
+        return $this->success(FacilityResource::collection(Facility::all()), 'All Fcilities');
     }
 
     /**
@@ -41,6 +45,11 @@ class FacilitiesController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * 
+     * @apiResourceCollection App\Http\Resources\FacilityResource
+     * @apiResourceModel App\Models\Facility 
+     * 
+     * @return ResourceCollection
      */
     public function store(StoreFacility $request)
     {
@@ -68,7 +77,13 @@ class FacilitiesController extends Controller
      */
     public function show($id)
     {
-        //
+        //showing facility 
+        try {
+            $facility = Facility::findOrFail($id);
+            return $this->success(FacilityResource::make($facility), 'Showing '.$id.' facility');    
+        }catch (exception $e) {
+            return $this->error($e->getMessage(),$e->getCode());
+        }         
     }
 
     /**
@@ -78,19 +93,22 @@ class FacilitiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateFacility $request, $id)
     {
-        //
-    }
+        //updating facility
+        try {
+            $facility = Facility::findOrFail($request->facility);
+            $facility->name = $request->name;
+            $facility->address = $request->address;
+            $facility->type_id = $request->type;
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+            $facility->save();
+
+            return $this->success(FacilityResource::make($facility), 'updated facility');
+        }
+        catch (exception $e) {
+            return $this->error($e->getMessage(),$e->getCode());
+        }            
     }
+    
 }

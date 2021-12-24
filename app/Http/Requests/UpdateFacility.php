@@ -6,20 +6,18 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
-class UpdateSpecialist extends FormRequest
+class UpdateFacility extends FormRequest
 {
  
-    // public function authorize()
-    // {
-    //     return Gate::allows('update-specialist',Specialist::find($this->specialist));   
-    // }
 
     public function rules()
     {
        return [
-            'specialist' => 'required',
-            'title' => 'required',
-            'type' => 'required|exists:specialist_types,id',
+            'facility' => 'required',
+            'name' => 'required',
+            'address' => 'required',
+            'type' => 'required|exists:facility_types,id',
+            'user' => 'nullable|exists:users,id',
        ];
     }
 
@@ -31,5 +29,6 @@ class UpdateSpecialist extends FormRequest
             'error'      => $validator->errors()
         ],422));
     }      
+        
     
 }

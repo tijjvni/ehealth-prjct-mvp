@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | Test Case
@@ -39,7 +41,12 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
+function getToken()
 {
-    // ..
+    //get user token 
+
+    $user = User::factory()->create();
+    $token = $user->createToken('API Token')->plainTextToken;
+
+    return $token;
 }

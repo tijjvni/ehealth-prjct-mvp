@@ -17,9 +17,10 @@ class CreateOpeningsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('for');
             $table->foreign('for')->references('id')->on('specialist_types');
+            $table->boolean('is_locum')->default(true);
             $table->unsignedBigInteger('facility_id');
             $table->foreign('facility_id')->references('id')->on('facilities');
-            $table->boolean('is_active')->default(false);
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

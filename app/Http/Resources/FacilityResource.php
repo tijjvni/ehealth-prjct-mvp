@@ -7,8 +7,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\FacilityTypeResource;
 use App\Http\Resources\UserResource;
 
-use App\Models\FacilityType;
-
 class FacilityResource extends JsonResource
 {
     /**
@@ -21,10 +19,10 @@ class FacilityResource extends JsonResource
     {
         return [
 			'name' => $this->name,
+			'address' => $this->address,
             'type' => FacilityTypeResource::make($this->type),
             'user' => UserResource::make($this->user),
         ];
-
-        return parent::toArray($request);
+        
     }
 }

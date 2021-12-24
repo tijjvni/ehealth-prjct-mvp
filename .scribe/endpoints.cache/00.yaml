@@ -255,13 +255,13 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: lamar30@example.net
+        example: aurelie38@example.com
         type: string
       password:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: yqyc
+        example: ar
         type: string
     responses: []
     responseFields: []
@@ -284,13 +284,13 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: dkrfbqeljgcuemkmrjkhnedp
+        example: jdwiwazpvmprlpyxkcprqqakcyexdroddvxtfsviylfdkfwngicnnh
         type: string
       email:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: walker.eldora@example.org
+        example: boyer.fabian@example.net
         type: string
       password:
         name: password
@@ -322,7 +322,7 @@ endpoints:
       - GET
     uri: api/users/me
     metadata:
-      title: 'Display a listing of the resource.'
+      title: ''
       description: ''
       authenticated: false
       custom: []
@@ -360,7 +360,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"title":"Prof.","type":{"id":3,"name":"Nurse"},"user":{"id":4,"name":"Dr. Ewell Williamson","email":"dbailey@example.com","email_verified_at":"2021-12-21T09:49:45.000000Z","display_picture":null,"created_at":"2021-12-21T09:49:45.000000Z","updated_at":"2021-12-21T09:49:45.000000Z"}},{"title":"Prof.","type":{"id":4,"name":"Lab Scientist"},"user":{"id":5,"name":"Mr. Sven Conn DVM","email":"carter.volkman@example.org","email_verified_at":"2021-12-21T09:49:46.000000Z","display_picture":null,"created_at":"2021-12-21T09:49:46.000000Z","updated_at":"2021-12-21T09:49:46.000000Z"}}]}'
+        content: '{"data":[{"title":"Mr.","type":{"id":5,"name":"MidWife"},"user":{"name":"Prof. Camron Beer PhD","email":"wilma.purdy@example.com","display_picture":null}},{"title":"Prof.","type":{"id":6,"name":"Nurse"},"user":{"name":"Angel Christiansen","email":"mohr.maynard@example.net","display_picture":null}}]}'
         headers: []
         description: null
     responseFields: []
@@ -389,85 +389,13 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: non
+        example: cupiditate
         type: string
     responses: []
     responseFields: []
   -
     httpMethods:
       - GET
-    uri: 'api/specialists/{id}'
-    metadata:
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the specialist.'
-        required: true
-        example: 16
-        type: integer
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-    responseFields: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/specialists/{id}'
-    metadata:
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the specialist.'
-        required: true
-        example: 2
-        type: integer
-    queryParameters: []
-    bodyParameters:
-      specialist:
-        name: specialist
-        description: ''
-        required: true
-        example: laborum
-        type: string
-      title:
-        name: title
-        description: ''
-        required: true
-        example: molestias
-        type: string
-      type:
-        name: type
-        description: ''
-        required: true
-        example: et
-        type: string
-    responses: []
-    responseFields: []
-  -
-    httpMethods:
-      - DELETE
     uri: 'api/specialists/{id}'
     metadata:
       title: ''
@@ -486,23 +414,6 @@ endpoints:
         type: integer
     queryParameters: []
     bodyParameters: []
-    responses: []
-    responseFields: []
-  -
-    httpMethods:
-      - GET
-    uri: api/facilities
-    metadata:
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    queryParameters: []
-    bodyParameters: []
     responses:
       -
         status: 401
@@ -515,10 +426,73 @@ endpoints:
     responseFields: []
   -
     httpMethods:
+      - PUT
+    uri: 'api/specialists/{id}'
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the specialist.'
+        required: true
+        example: 8
+        type: integer
+    queryParameters: []
+    bodyParameters:
+      specialist:
+        name: specialist
+        description: ''
+        required: true
+        example: sit
+        type: string
+      title:
+        name: title
+        description: ''
+        required: true
+        example: adipisci
+        type: string
+      type:
+        name: type
+        description: ''
+        required: true
+        example: ea
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/facilities
+    metadata:
+      title: 'Get all facilities'
+      description: 'Display a listing of the resource.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"name":"Fay-Ankunding","address":"760 Hailie Key Apt. 031\nLaviniastad, VA 27924-1060","type":{"id":6,"name":"Lab"},"user":null},{"name":"Schoen-Tremblay","address":"9932 Jacobs Manors\nEdgarberg, MT 62103","type":{"id":7,"name":"Clinic"},"user":null}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
       - POST
     uri: api/facilities
     metadata:
-      title: ''
+      title: 'Store a newly created resource in storage.'
       description: ''
       authenticated: false
       custom: []
@@ -532,19 +506,25 @@ endpoints:
         name: name
         description: 'Must be at least 3 characters.'
         required: true
-        example: soi
+        example: cxu
         type: string
       address:
         name: address
         description: 'Must be at least 3 characters.'
         required: true
-        example: tog
+        example: v
         type: string
       type:
         name: type
         description: ''
         required: true
-        example: quia
+        example: 2777.74
+        type: number
+      user:
+        name: user
+        description: ''
+        required: false
+        example: null
         type: string
     responses: []
     responseFields: []
@@ -553,7 +533,7 @@ endpoints:
       - GET
     uri: 'api/facilities/{id}'
     metadata:
-      title: ''
+      title: 'Display the specified resource.'
       description: ''
       authenticated: false
       custom: []
@@ -565,7 +545,7 @@ endpoints:
         name: id
         description: 'The ID of the facility.'
         required: true
-        example: 11
+        example: 1
         type: integer
     queryParameters: []
     bodyParameters: []
@@ -584,7 +564,7 @@ endpoints:
       - PUT
     uri: 'api/facilities/{id}'
     metadata:
-      title: ''
+      title: 'Update the specified resource in storage.'
       description: ''
       authenticated: false
       custom: []
@@ -596,9 +576,39 @@ endpoints:
         name: id
         description: 'The ID of the facility.'
         required: true
-        example: 17
+        example: 20
         type: integer
     queryParameters: []
-    bodyParameters: []
+    bodyParameters:
+      facility:
+        name: facility
+        description: ''
+        required: true
+        example: soluta
+        type: string
+      name:
+        name: name
+        description: ''
+        required: true
+        example: iure
+        type: string
+      address:
+        name: address
+        description: ''
+        required: true
+        example: et
+        type: string
+      type:
+        name: type
+        description: ''
+        required: true
+        example: quo
+        type: string
+      user:
+        name: user
+        description: ''
+        required: false
+        example: null
+        type: string
     responses: []
     responseFields: []

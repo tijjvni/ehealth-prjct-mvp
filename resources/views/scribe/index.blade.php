@@ -90,7 +90,7 @@
                         <a href="#endpoints-POSTapi-logout">POST api/logout</a>
                     </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-users-me">
-                        <a href="#endpoints-GETapi-users-me">Display a listing of the resource.</a>
+                        <a href="#endpoints-GETapi-users-me">GET api/users/me</a>
                     </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-specialists">
                         <a href="#endpoints-GETapi-specialists">Display all specialists</a>
@@ -104,20 +104,17 @@
                                     <li class="tocify-item level-2" data-unique="endpoints-PUTapi-specialists--id-">
                         <a href="#endpoints-PUTapi-specialists--id-">PUT api/specialists/{id}</a>
                     </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-specialists--id-">
-                        <a href="#endpoints-DELETEapi-specialists--id-">DELETE api/specialists/{id}</a>
-                    </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-facilities">
-                        <a href="#endpoints-GETapi-facilities">GET api/facilities</a>
+                        <a href="#endpoints-GETapi-facilities">Get all facilities</a>
                     </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-POSTapi-facilities">
-                        <a href="#endpoints-POSTapi-facilities">POST api/facilities</a>
+                        <a href="#endpoints-POSTapi-facilities">Store a newly created resource in storage.</a>
                     </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-facilities--id-">
-                        <a href="#endpoints-GETapi-facilities--id-">GET api/facilities/{id}</a>
+                        <a href="#endpoints-GETapi-facilities--id-">Display the specified resource.</a>
                     </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-PUTapi-facilities--id-">
-                        <a href="#endpoints-PUTapi-facilities--id-">PUT api/facilities/{id}</a>
+                        <a href="#endpoints-PUTapi-facilities--id-">Update the specified resource in storage.</a>
                     </li>
                                                     </ul>
                             </ul>
@@ -126,12 +123,12 @@
             </div>
 
             <ul class="toc-footer" id="toc-footer">
-                            <li><a href="/postman">View Postman collection</a></li>
-                            <li><a href="/openapi">View OpenAPI spec</a></li>
+                            <li><a href="{{ route("scribe.postman") }}">View Postman collection</a></li>
+                            <li><a href="{{ route("scribe.openapi") }}">View OpenAPI spec</a></li>
                             <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
                     </ul>
         <ul class="toc-footer" id="last-updated">
-        <li>Last updated: December 21 2021</li>
+        <li>Last updated: December 23 2021</li>
     </ul>
 </div>
 
@@ -540,8 +537,8 @@ access-control-allow-origin: *
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"lamar30@example.net\",
-    \"password\": \"yqyc\"
+    \"email\": \"aurelie38@example.com\",
+    \"password\": \"ar\"
 }"
 </code></pre></div>
 
@@ -557,8 +554,8 @@ const headers = {
 };
 
 let body = {
-    "email": "lamar30@example.net",
-    "password": "yqyc"
+    "email": "aurelie38@example.com",
+    "password": "ar"
 };
 
 fetch(url, {
@@ -616,7 +613,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTapi-login"
-               value="lamar30@example.net"
+               value="aurelie38@example.com"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address.</p>
@@ -626,7 +623,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="POSTapi-login"
-               value="yqyc"
+               value="ar"
                data-component="body" hidden>
     <br>
 <p>Must be at least 6 characters.</p>
@@ -650,8 +647,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"dkrfbqeljgcuemkmrjkhnedp\",
-    \"email\": \"walker.eldora@example.org\",
+    \"name\": \"jdwiwazpvmprlpyxkcprqqakcyexdroddvxtfsviylfdkfwngicnnh\",
+    \"email\": \"boyer.fabian@example.net\",
     \"password\": \"\"
 }"
 </code></pre></div>
@@ -668,8 +665,8 @@ const headers = {
 };
 
 let body = {
-    "name": "dkrfbqeljgcuemkmrjkhnedp",
-    "email": "walker.eldora@example.org",
+    "name": "jdwiwazpvmprlpyxkcprqqakcyexdroddvxtfsviylfdkfwngicnnh",
+    "email": "boyer.fabian@example.net",
     "password": ""
 };
 
@@ -728,7 +725,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-register"
-               value="dkrfbqeljgcuemkmrjkhnedp"
+               value="jdwiwazpvmprlpyxkcprqqakcyexdroddvxtfsviylfdkfwngicnnh"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -738,7 +735,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTapi-register"
-               value="walker.eldora@example.org"
+               value="boyer.fabian@example.net"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address.</p>
@@ -833,7 +830,7 @@ fetch(url, {
         </p>
                     </form>
 
-            <h2 id="endpoints-GETapi-users-me">Display a listing of the resource.</h2>
+            <h2 id="endpoints-GETapi-users-me">GET api/users/me</h2>
 
 <p>
 </p>
@@ -972,35 +969,27 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;title&quot;: &quot;Prof.&quot;,
+            &quot;title&quot;: &quot;Mr.&quot;,
             &quot;type&quot;: {
-                &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;Nurse&quot;
+                &quot;id&quot;: 5,
+                &quot;name&quot;: &quot;MidWife&quot;
             },
             &quot;user&quot;: {
-                &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;Dr. Ewell Williamson&quot;,
-                &quot;email&quot;: &quot;dbailey@example.com&quot;,
-                &quot;email_verified_at&quot;: &quot;2021-12-21T09:49:45.000000Z&quot;,
-                &quot;display_picture&quot;: null,
-                &quot;created_at&quot;: &quot;2021-12-21T09:49:45.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2021-12-21T09:49:45.000000Z&quot;
+                &quot;name&quot;: &quot;Prof. Camron Beer PhD&quot;,
+                &quot;email&quot;: &quot;wilma.purdy@example.com&quot;,
+                &quot;display_picture&quot;: null
             }
         },
         {
             &quot;title&quot;: &quot;Prof.&quot;,
             &quot;type&quot;: {
-                &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;Lab Scientist&quot;
+                &quot;id&quot;: 6,
+                &quot;name&quot;: &quot;Nurse&quot;
             },
             &quot;user&quot;: {
-                &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;Mr. Sven Conn DVM&quot;,
-                &quot;email&quot;: &quot;carter.volkman@example.org&quot;,
-                &quot;email_verified_at&quot;: &quot;2021-12-21T09:49:46.000000Z&quot;,
-                &quot;display_picture&quot;: null,
-                &quot;created_at&quot;: &quot;2021-12-21T09:49:46.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2021-12-21T09:49:46.000000Z&quot;
+                &quot;name&quot;: &quot;Angel Christiansen&quot;,
+                &quot;email&quot;: &quot;mohr.maynard@example.net&quot;,
+                &quot;display_picture&quot;: null
             }
         }
     ]
@@ -1066,7 +1055,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"title\": \"\",
-    \"type\": \"non\"
+    \"type\": \"cupiditate\"
 }"
 </code></pre></div>
 
@@ -1083,7 +1072,7 @@ const headers = {
 
 let body = {
     "title": "",
-    "type": "non"
+    "type": "cupiditate"
 };
 
 fetch(url, {
@@ -1151,7 +1140,7 @@ fetch(url, {
                 <input type="text"
                name="type"
                data-endpoint="POSTapi-specialists"
-               value="non"
+               value="cupiditate"
                data-component="body" hidden>
     <br>
 
@@ -1171,14 +1160,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://medhive-mvp.herokuapp.com/api/specialists/16" \
+    --get "http://medhive-mvp.herokuapp.com/api/specialists/5" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://medhive-mvp.herokuapp.com/api/specialists/16"
+    "http://medhive-mvp.herokuapp.com/api/specialists/5"
 );
 
 const headers = {
@@ -1257,7 +1246,7 @@ access-control-allow-origin: *
                 <input type="number"
                name="id"
                data-endpoint="GETapi-specialists--id-"
-               value="16"
+               value="5"
                data-component="url" hidden>
     <br>
 <p>The ID of the specialist.</p>
@@ -1277,20 +1266,20 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://medhive-mvp.herokuapp.com/api/specialists/2" \
+    "http://medhive-mvp.herokuapp.com/api/specialists/8" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"specialist\": \"laborum\",
-    \"title\": \"molestias\",
-    \"type\": \"et\"
+    \"specialist\": \"sit\",
+    \"title\": \"adipisci\",
+    \"type\": \"ea\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://medhive-mvp.herokuapp.com/api/specialists/2"
+    "http://medhive-mvp.herokuapp.com/api/specialists/8"
 );
 
 const headers = {
@@ -1299,9 +1288,9 @@ const headers = {
 };
 
 let body = {
-    "specialist": "laborum",
-    "title": "molestias",
-    "type": "et"
+    "specialist": "sit",
+    "title": "adipisci",
+    "type": "ea"
 };
 
 fetch(url, {
@@ -1359,7 +1348,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="PUTapi-specialists--id-"
-               value="2"
+               value="8"
                data-component="url" hidden>
     <br>
 <p>The ID of the specialist.</p>
@@ -1370,7 +1359,7 @@ fetch(url, {
                 <input type="text"
                name="specialist"
                data-endpoint="PUTapi-specialists--id-"
-               value="laborum"
+               value="sit"
                data-component="body" hidden>
     <br>
 
@@ -1380,7 +1369,7 @@ fetch(url, {
                 <input type="text"
                name="title"
                data-endpoint="PUTapi-specialists--id-"
-               value="molestias"
+               value="adipisci"
                data-component="body" hidden>
     <br>
 
@@ -1390,108 +1379,19 @@ fetch(url, {
                 <input type="text"
                name="type"
                data-endpoint="PUTapi-specialists--id-"
-               value="et"
+               value="ea"
                data-component="body" hidden>
     <br>
 
         </p>
         </form>
 
-            <h2 id="endpoints-DELETEapi-specialists--id-">DELETE api/specialists/{id}</h2>
+            <h2 id="endpoints-GETapi-facilities">Get all facilities</h2>
 
 <p>
 </p>
 
-
-
-<span id="example-requests-DELETEapi-specialists--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request DELETE \
-    "http://medhive-mvp.herokuapp.com/api/specialists/5" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://medhive-mvp.herokuapp.com/api/specialists/5"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-DELETEapi-specialists--id-">
-</span>
-<span id="execution-results-DELETEapi-specialists--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-specialists--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-specialists--id-"></code></pre>
-</span>
-<span id="execution-error-DELETEapi-specialists--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-specialists--id-"></code></pre>
-</span>
-<form id="form-DELETEapi-specialists--id-" data-method="DELETE"
-      data-path="api/specialists/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-specialists--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-specialists--id-"
-                    onclick="tryItOut('DELETEapi-specialists--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-specialists--id-"
-                    onclick="cancelTryOut('DELETEapi-specialists--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-specialists--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>api/specialists/{id}</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="DELETEapi-specialists--id-"
-               value="5"
-               data-component="url" hidden>
-    <br>
-<p>The ID of the specialist.</p>
-            </p>
-                    </form>
-
-            <h2 id="endpoints-GETapi-facilities">GET api/facilities</h2>
-
-<p>
-</p>
-
-
+<p>Display a listing of the resource.</p>
 
 <span id="example-requests-GETapi-facilities">
 <blockquote>Example request:</blockquote>
@@ -1523,20 +1423,31 @@ fetch(url, {
 
 <span id="example-responses-GETapi-facilities">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary>
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre>
-        </details>         <pre>
+                <pre>
 
 <code class="language-json">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;data&quot;: [
+        {
+            &quot;name&quot;: &quot;Fay-Ankunding&quot;,
+            &quot;address&quot;: &quot;760 Hailie Key Apt. 031\nLaviniastad, VA 27924-1060&quot;,
+            &quot;type&quot;: {
+                &quot;id&quot;: 6,
+                &quot;name&quot;: &quot;Lab&quot;
+            },
+            &quot;user&quot;: null
+        },
+        {
+            &quot;name&quot;: &quot;Schoen-Tremblay&quot;,
+            &quot;address&quot;: &quot;9932 Jacobs Manors\nEdgarberg, MT 62103&quot;,
+            &quot;type&quot;: {
+                &quot;id&quot;: 7,
+                &quot;name&quot;: &quot;Clinic&quot;
+            },
+            &quot;user&quot;: null
+        }
+    ]
 }</code>
  </pre>
     </span>
@@ -1581,7 +1492,7 @@ access-control-allow-origin: *
         </p>
                     </form>
 
-            <h2 id="endpoints-POSTapi-facilities">POST api/facilities</h2>
+            <h2 id="endpoints-POSTapi-facilities">Store a newly created resource in storage.</h2>
 
 <p>
 </p>
@@ -1598,9 +1509,9 @@ access-control-allow-origin: *
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"soi\",
-    \"address\": \"tog\",
-    \"type\": \"quia\"
+    \"name\": \"cxu\",
+    \"address\": \"v\",
+    \"type\": 2777.74
 }"
 </code></pre></div>
 
@@ -1616,9 +1527,9 @@ const headers = {
 };
 
 let body = {
-    "name": "soi",
-    "address": "tog",
-    "type": "quia"
+    "name": "cxu",
+    "address": "v",
+    "type": 2777.74
 };
 
 fetch(url, {
@@ -1676,7 +1587,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-facilities"
-               value="soi"
+               value="cxu"
                data-component="body" hidden>
     <br>
 <p>Must be at least 3 characters.</p>
@@ -1686,24 +1597,34 @@ fetch(url, {
                 <input type="text"
                name="address"
                data-endpoint="POSTapi-facilities"
-               value="tog"
+               value="v"
                data-component="body" hidden>
     <br>
 <p>Must be at least 3 characters.</p>
         </p>
                 <p>
-            <b><code>type</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
+            <b><code>type</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+                <input type="number"
                name="type"
                data-endpoint="POSTapi-facilities"
-               value="quia"
+               value="2777.74"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>user</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="user"
+               data-endpoint="POSTapi-facilities"
+               value=""
                data-component="body" hidden>
     <br>
 
         </p>
         </form>
 
-            <h2 id="endpoints-GETapi-facilities--id-">GET api/facilities/{id}</h2>
+            <h2 id="endpoints-GETapi-facilities--id-">Display the specified resource.</h2>
 
 <p>
 </p>
@@ -1716,14 +1637,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://medhive-mvp.herokuapp.com/api/facilities/11" \
+    --get "http://medhive-mvp.herokuapp.com/api/facilities/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://medhive-mvp.herokuapp.com/api/facilities/11"
+    "http://medhive-mvp.herokuapp.com/api/facilities/1"
 );
 
 const headers = {
@@ -1802,14 +1723,14 @@ access-control-allow-origin: *
                 <input type="number"
                name="id"
                data-endpoint="GETapi-facilities--id-"
-               value="11"
+               value="1"
                data-component="url" hidden>
     <br>
 <p>The ID of the facility.</p>
             </p>
                     </form>
 
-            <h2 id="endpoints-PUTapi-facilities--id-">PUT api/facilities/{id}</h2>
+            <h2 id="endpoints-PUTapi-facilities--id-">Update the specified resource in storage.</h2>
 
 <p>
 </p>
@@ -1822,14 +1743,21 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://medhive-mvp.herokuapp.com/api/facilities/17" \
+    "http://medhive-mvp.herokuapp.com/api/facilities/20" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --data "{
+    \"facility\": \"soluta\",
+    \"name\": \"iure\",
+    \"address\": \"et\",
+    \"type\": \"quo\"
+}"
+</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://medhive-mvp.herokuapp.com/api/facilities/17"
+    "http://medhive-mvp.herokuapp.com/api/facilities/20"
 );
 
 const headers = {
@@ -1837,9 +1765,17 @@ const headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "facility": "soluta",
+    "name": "iure",
+    "address": "et",
+    "type": "quo"
+};
+
 fetch(url, {
     method: "PUT",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
@@ -1891,12 +1827,63 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="PUTapi-facilities--id-"
-               value="17"
+               value="20"
                data-component="url" hidden>
     <br>
 <p>The ID of the facility.</p>
             </p>
-                    </form>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>facility</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="facility"
+               data-endpoint="PUTapi-facilities--id-"
+               value="soluta"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="PUTapi-facilities--id-"
+               value="iure"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>address</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="address"
+               data-endpoint="PUTapi-facilities--id-"
+               value="et"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>type</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="type"
+               data-endpoint="PUTapi-facilities--id-"
+               value="quo"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>user</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="user"
+               data-endpoint="PUTapi-facilities--id-"
+               value=""
+               data-component="body" hidden>
+    <br>
+
+        </p>
+        </form>
 
     
 

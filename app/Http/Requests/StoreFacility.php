@@ -11,11 +11,12 @@ class StoreFacility extends FormRequest
   
     public function rules()
     {
-       return [
-        'name' => 'required|min:3',
-        'address' => 'required|min:3',
-        'type' => 'required|numeric|exists:facility_types,id',
-       ];
+        return [
+            'name' => 'required|min:3',
+            'address' => 'required|min:3',
+            'type' => 'required|numeric|exists:facility_types,id',
+            'user' => 'nullable|exists:users,id',
+        ];
     }
 
     public function failedValidation(Validator $validator)
