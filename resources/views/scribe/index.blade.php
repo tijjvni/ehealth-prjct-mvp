@@ -121,12 +121,7 @@
         
                         
             </div>
-
-            <ul class="toc-footer" id="toc-footer">
-                            <li><a href="{{ route("scribe.postman") }}">View Postman collection</a></li>
-                            <li><a href="{{ route("scribe.openapi") }}">View OpenAPI spec</a></li>
-                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
-                    </ul>
+            
         <ul class="toc-footer" id="last-updated">
         <li>Last updated: December 23 2021</li>
     </ul>
