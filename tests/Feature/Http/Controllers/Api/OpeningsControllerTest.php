@@ -39,7 +39,7 @@ it('can create an opening', function () {
                     'facility' => $facility->id,
                     'type' => $faker->boolean,
                 ]);
-                
+    
     $response->assertStatus(201);
     $response->assertJsonStructure([
         'data' => [
@@ -51,7 +51,7 @@ it('can create an opening', function () {
     ]);
 });
 
-it('can show a facility', function () {
+it('can show an opening', function () {
 
     $opening = Opening::factory()->create()->id;
 
@@ -75,8 +75,9 @@ it('can update an existing opening', function () {
 
     $response = $this->withHeader('Authorization', 'Bearer ' .getToken())
                     ->json('PUT','/api/openings/'.$opening->id, [
+                        'opening' => $opening->id, 
                         'for' => $opening->for, 
-                        'facility' => $opening->facility, 
+                        'facility' => $opening->facility_id, 
                         'type' => $opening->is_locum, 
                         'is_active' => $opening->is_active, 
                     ]);
@@ -92,6 +93,7 @@ it('can update an existing opening', function () {
     ]);     
 });
 
+
 it('can not update an existing openings without required parameters', function () {  
 
     $opening = Opening::factory()->create();
@@ -102,7 +104,3 @@ it('can not update an existing openings without required parameters', function (
                     ]);
     $response->assertStatus(422);
 });
-
-
-
-

@@ -27,15 +27,15 @@ it('can not create a facility without request body', function () {
 });
 
 it('can create a facility', function () {
-    $facilityType = FacilityType::factory()->create()->id;
+    $facilityType = FacilityType::factory()->create();
 
     $faker = Faker::create();
 
     $response = $this->withHeader('Authorization', 'Bearer ' .getToken())
                 ->postJson('/api/facilities', [
-                    'name' => $faker->company,
-                    'address' => $faker->address,
-                    'type' => $facilityType,
+                    'name' => '$faker->company',
+                    'address' => '$faker->address',
+                    'type' => $facilityType->id,
                 ]);
     $response->assertStatus(201);
     $response->assertJsonStructure([

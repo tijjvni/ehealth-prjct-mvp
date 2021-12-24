@@ -255,13 +255,13 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: aurelie38@example.com
+        example: slindgren@example.com
         type: string
       password:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: ar
+        example: v
         type: string
     responses: []
     responseFields: []
@@ -284,19 +284,19 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: jdwiwazpvmprlpyxkcprqqakcyexdroddvxtfsviylfdkfwngicnnh
+        example: djqkhoetzkfcuzcsfdeyciqwtyubimmcvttygurpjlmkdkvnxcbywwadzgwjsuxscbafyqivckkcxygtazgzuxtzknarxznpofzultydqjgwtzurohsnffwlqvkuevjcxklbhyptbeowwovvylinngzqtngwpbvnvhyydcgrfimexqjsyrjnxzaxvjkcdellsrqgwpxmjvpyysumxytkzsc
         type: string
       email:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: boyer.fabian@example.net
+        example: marques.murray@example.org
         type: string
       password:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: ''
+        example: lvjav
         type: string
     responses: []
     responseFields: []
@@ -360,7 +360,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"title":"Mr.","type":{"id":5,"name":"MidWife"},"user":{"name":"Prof. Camron Beer PhD","email":"wilma.purdy@example.com","display_picture":null}},{"title":"Prof.","type":{"id":6,"name":"Nurse"},"user":{"name":"Angel Christiansen","email":"mohr.maynard@example.net","display_picture":null}}]}'
+        content: '{"data":[{"title":"Dr.","type":{"id":7,"name":"Pharmacist"},"user":{"name":"Gonzalo Hammes","email":"pat.rempel@example.net","display_picture":null}},{"title":"Prof.","type":{"id":8,"name":"Nurse"},"user":{"name":"Shea Monahan","email":"breana77@example.net","display_picture":null}}]}'
         headers: []
         description: null
     responseFields: []
@@ -383,13 +383,13 @@ endpoints:
         name: title
         description: 'Must be at least 1 characters.'
         required: true
-        example: ''
+        example: a
         type: string
       type:
         name: type
         description: ''
         required: true
-        example: cupiditate
+        example: nobis
         type: string
     responses: []
     responseFields: []
@@ -410,7 +410,7 @@ endpoints:
         name: id
         description: 'The ID of the specialist.'
         required: true
-        example: 5
+        example: 8
         type: integer
     queryParameters: []
     bodyParameters: []
@@ -449,19 +449,19 @@ endpoints:
         name: specialist
         description: ''
         required: true
-        example: sit
+        example: exercitationem
         type: string
       title:
         name: title
         description: ''
         required: true
-        example: adipisci
+        example: voluptas
         type: string
       type:
         name: type
         description: ''
         required: true
-        example: ea
+        example: ut
         type: string
     responses: []
     responseFields: []
@@ -483,7 +483,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"name":"Fay-Ankunding","address":"760 Hailie Key Apt. 031\nLaviniastad, VA 27924-1060","type":{"id":6,"name":"Lab"},"user":null},{"name":"Schoen-Tremblay","address":"9932 Jacobs Manors\nEdgarberg, MT 62103","type":{"id":7,"name":"Clinic"},"user":null}]}'
+        content: '{"data":[{"name":"Lockman-O''Kon","address":"237 Elouise Glen\nChristiansenshire, OR 39706-4624","type":{"id":8,"name":"Lab"}},{"name":"Jerde-Walter","address":"65631 Vicente Lodge\nBaileyview, MI 92197-2826","type":{"id":9,"name":"Clinic"}}]}'
         headers: []
         description: null
     responseFields: []
@@ -506,19 +506,19 @@ endpoints:
         name: name
         description: 'Must be at least 3 characters.'
         required: true
-        example: cxu
+        example: zb
         type: string
       address:
         name: address
         description: 'Must be at least 3 characters.'
         required: true
-        example: v
+        example: ''
         type: string
       type:
         name: type
         description: ''
         required: true
-        example: 2777.74
+        example: 403058.97304
         type: number
       user:
         name: user
@@ -526,7 +526,12 @@ endpoints:
         required: false
         example: null
         type: string
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"name":"Russel, Gleason and O''Reilly","address":"6523 Sarah Lodge Suite 005\nO''Connellview, HI 11377","type":{"id":10,"name":"Pharmacy"}},{"name":"Gleichner, Heathcote and Murray","address":"2843 Franco Point Suite 669\nNorth Lizeth, KY 53657","type":{"id":11,"name":"Pharmacy"}}]}'
+        headers: []
+        description: null
     responseFields: []
   -
     httpMethods:
@@ -576,7 +581,7 @@ endpoints:
         name: id
         description: 'The ID of the facility.'
         required: true
-        example: 20
+        example: 10
         type: integer
     queryParameters: []
     bodyParameters:
@@ -584,25 +589,25 @@ endpoints:
         name: facility
         description: ''
         required: true
-        example: soluta
+        example: doloribus
         type: string
       name:
         name: name
         description: ''
         required: true
-        example: iure
+        example: aut
         type: string
       address:
         name: address
         description: ''
         required: true
-        example: et
+        example: corporis
         type: string
       type:
         name: type
         description: ''
         required: true
-        example: quo
+        example: et
         type: string
       user:
         name: user
@@ -610,5 +615,170 @@ endpoints:
         required: false
         example: null
         type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/openings
+    metadata:
+      title: 'Get all openings'
+      description: 'Display a listing of the resource.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":3,"for":9,"facility":{"id":7,"name":"Wisozk-Kessler","address":"7163 Herman Squares Suite 110\nWest Deshaun, CT 43907","user_id":8,"type_id":12,"created_at":"2021-12-24T19:28:54.000000Z","updated_at":"2021-12-24T19:28:54.000000Z"},"type":true,"is_active":true},{"id":4,"for":10,"facility":{"id":8,"name":"Mosciski-Cummerata","address":"242 Daphne Lodge Apt. 074\nJodyborough, DE 58257","user_id":9,"type_id":13,"created_at":"2021-12-24T19:28:55.000000Z","updated_at":"2021-12-24T19:28:55.000000Z"},"type":true,"is_active":true}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/openings
+    metadata:
+      title: 'Store a newly created opening resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      for:
+        name: for
+        description: ''
+        required: true
+        example: minus
+        type: string
+      facility:
+        name: facility
+        description: ''
+        required: true
+        example: rerum
+        type: string
+      type:
+        name: type
+        description: ''
+        required: true
+        example: false
+        type: boolean
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":5,"for":11,"facility":{"id":9,"name":"Sauer, Ledner and Zemlak","address":"2144 Sunny Brook Suite 953\nSouth Gracielachester, SC 52787-0595","user_id":10,"type_id":14,"created_at":"2021-12-24T19:28:57.000000Z","updated_at":"2021-12-24T19:28:57.000000Z"},"type":true,"is_active":true},{"id":6,"for":12,"facility":{"id":10,"name":"Conn and Sons","address":"265 Lon Creek Apt. 279\nHipolitoton, NV 85226-0389","user_id":11,"type_id":15,"created_at":"2021-12-24T19:28:58.000000Z","updated_at":"2021-12-24T19:28:58.000000Z"},"type":true,"is_active":true}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/openings/{id}'
+    metadata:
+      title: 'Display the specified opening resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the opening.'
+        required: true
+        example: 19
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":7,"for":13,"facility":{"id":11,"name":"Klocko LLC","address":"5125 Littel Valley\nFadelmouth, NC 96122-3383","user_id":12,"type_id":16,"created_at":"2021-12-24T19:28:59.000000Z","updated_at":"2021-12-24T19:28:59.000000Z"},"type":true,"is_active":true},{"id":8,"for":14,"facility":{"id":12,"name":"Wuckert, Turcotte and Metz","address":"2171 Weldon Trace Suite 028\nRalphview, DE 92701-8758","user_id":13,"type_id":17,"created_at":"2021-12-24T19:29:00.000000Z","updated_at":"2021-12-24T19:29:00.000000Z"},"type":true,"is_active":true}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/openings/{id}'
+    metadata:
+      title: 'Update the specified opening resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the opening.'
+        required: true
+        example: 1
+        type: integer
+    queryParameters: []
+    bodyParameters:
+      for:
+        name: for
+        description: ''
+        required: true
+        example: sint
+        type: string
+      facility:
+        name: facility
+        description: ''
+        required: true
+        example: numquam
+        type: string
+      type:
+        name: type
+        description: ''
+        required: true
+        example: false
+        type: boolean
+      is_active:
+        name: is_active
+        description: ''
+        required: true
+        example: true
+        type: boolean
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":9,"for":15,"facility":{"id":13,"name":"Klein-Smitham","address":"289 Vicenta Spur Apt. 626\nSouth Mistyfurt, CO 74958-3552","user_id":14,"type_id":18,"created_at":"2021-12-24T19:29:02.000000Z","updated_at":"2021-12-24T19:29:02.000000Z"},"type":true,"is_active":true},{"id":10,"for":16,"facility":{"id":14,"name":"Fahey, Hansen and Carroll","address":"5849 Jermaine Meadows\nAnselside, VT 87375","user_id":15,"type_id":19,"created_at":"2021-12-24T19:29:03.000000Z","updated_at":"2021-12-24T19:29:03.000000Z"},"type":true,"is_active":true}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/openings/{id}'
+    metadata:
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the opening.'
+        required: true
+        example: 7
+        type: integer
+    queryParameters: []
+    bodyParameters: []
     responses: []
     responseFields: []

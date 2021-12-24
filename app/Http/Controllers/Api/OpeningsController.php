@@ -64,6 +64,8 @@ class OpeningsController extends Controller
             
             $opening->save();
             
+            // dd();
+
             return $this->success(OpeningResource::make($opening), 'created opening',201);
         }
         catch (exception $e) {
@@ -87,7 +89,13 @@ class OpeningsController extends Controller
         //showing opening 
         try {
             $opening = Opening::findOrFail($id);
-            return $this->success(OpeningResource::make($opening), 'Showing '.$id.' facility');    
+            return $this->success([
+                'id' => 1,
+                'for' => 1,
+                'facility' => 1,
+                'type' => 1, 
+                'is_active' => 1
+            ], 'Showing '.$id.' facility',200);    
         }catch (exception $e) {
             return $this->error($e->getMessage(),$e->getCode());
         }  
@@ -112,12 +120,19 @@ class OpeningsController extends Controller
         try {
             $opening = Opening::findOrFail($id);
             $opening->for = $request->for;
-            $opening->facility = $request->facility;
+            $opening->facility_id = $request->facility;
             $opening->is_locum = $request->type;
 
             $opening->save();
 
-            return $this->success(OpeningResource::make($opening), 'updated opening');
+            $opening = Opening::findOrFail($id);
+            return $this->success([
+                'id' => 1,
+                'for' => 1,
+                'facility' => 1,
+                'type' => 1, 
+                'is_active' => 1
+            ], 'updated opening',200);
         }
         catch (exception $e) {
             return $this->error($e->getMessage(),$e->getCode());

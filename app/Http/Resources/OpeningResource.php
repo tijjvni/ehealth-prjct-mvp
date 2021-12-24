@@ -15,15 +15,17 @@ class OpeningResource extends JsonResource
      *
      * @param  \Illuminate\Http\Request  $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
+     * 
+     * 
      */
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
 			'for' => $this->for,
-			'facility' => $this->facility_id,
-            'type' => 'Locum',
-			'is_active' => $this->is_active,
+            'facility' => $this->facility, 
+            'type' => $this->is_locum, 
+            'is_active' => $this->is_active, 
         ];
-        
     }
 }

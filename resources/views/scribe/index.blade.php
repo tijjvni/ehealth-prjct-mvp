@@ -116,6 +116,21 @@
                                     <li class="tocify-item level-2" data-unique="endpoints-PUTapi-facilities--id-">
                         <a href="#endpoints-PUTapi-facilities--id-">Update the specified resource in storage.</a>
                     </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-openings">
+                        <a href="#endpoints-GETapi-openings">Get all openings</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-openings">
+                        <a href="#endpoints-POSTapi-openings">Store a newly created opening resource in storage.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-openings--id-">
+                        <a href="#endpoints-GETapi-openings--id-">Display the specified opening resource.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-PUTapi-openings--id-">
+                        <a href="#endpoints-PUTapi-openings--id-">Update the specified opening resource in storage.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-openings--id-">
+                        <a href="#endpoints-DELETEapi-openings--id-">Remove the specified resource from storage.</a>
+                    </li>
                                                     </ul>
                             </ul>
         
@@ -123,7 +138,7 @@
             </div>
             
         <ul class="toc-footer" id="last-updated">
-        <li>Last updated: December 23 2021</li>
+        <li>Last updated: December 24 2021</li>
     </ul>
 </div>
 
@@ -532,8 +547,8 @@ access-control-allow-origin: *
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"aurelie38@example.com\",
-    \"password\": \"ar\"
+    \"email\": \"slindgren@example.com\",
+    \"password\": \"v\"
 }"
 </code></pre></div>
 
@@ -549,8 +564,8 @@ const headers = {
 };
 
 let body = {
-    "email": "aurelie38@example.com",
-    "password": "ar"
+    "email": "slindgren@example.com",
+    "password": "v"
 };
 
 fetch(url, {
@@ -608,7 +623,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTapi-login"
-               value="aurelie38@example.com"
+               value="slindgren@example.com"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address.</p>
@@ -618,7 +633,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="POSTapi-login"
-               value="ar"
+               value="v"
                data-component="body" hidden>
     <br>
 <p>Must be at least 6 characters.</p>
@@ -642,9 +657,9 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"jdwiwazpvmprlpyxkcprqqakcyexdroddvxtfsviylfdkfwngicnnh\",
-    \"email\": \"boyer.fabian@example.net\",
-    \"password\": \"\"
+    \"name\": \"djqkhoetzkfcuzcsfdeyciqwtyubimmcvttygurpjlmkdkvnxcbywwadzgwjsuxscbafyqivckkcxygtazgzuxtzknarxznpofzultydqjgwtzurohsnffwlqvkuevjcxklbhyptbeowwovvylinngzqtngwpbvnvhyydcgrfimexqjsyrjnxzaxvjkcdellsrqgwpxmjvpyysumxytkzsc\",
+    \"email\": \"marques.murray@example.org\",
+    \"password\": \"lvjav\"
 }"
 </code></pre></div>
 
@@ -660,9 +675,9 @@ const headers = {
 };
 
 let body = {
-    "name": "jdwiwazpvmprlpyxkcprqqakcyexdroddvxtfsviylfdkfwngicnnh",
-    "email": "boyer.fabian@example.net",
-    "password": ""
+    "name": "djqkhoetzkfcuzcsfdeyciqwtyubimmcvttygurpjlmkdkvnxcbywwadzgwjsuxscbafyqivckkcxygtazgzuxtzknarxznpofzultydqjgwtzurohsnffwlqvkuevjcxklbhyptbeowwovvylinngzqtngwpbvnvhyydcgrfimexqjsyrjnxzaxvjkcdellsrqgwpxmjvpyysumxytkzsc",
+    "email": "marques.murray@example.org",
+    "password": "lvjav"
 };
 
 fetch(url, {
@@ -720,7 +735,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-register"
-               value="jdwiwazpvmprlpyxkcprqqakcyexdroddvxtfsviylfdkfwngicnnh"
+               value="djqkhoetzkfcuzcsfdeyciqwtyubimmcvttygurpjlmkdkvnxcbywwadzgwjsuxscbafyqivckkcxygtazgzuxtzknarxznpofzultydqjgwtzurohsnffwlqvkuevjcxklbhyptbeowwovvylinngzqtngwpbvnvhyydcgrfimexqjsyrjnxzaxvjkcdellsrqgwpxmjvpyysumxytkzsc"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -730,7 +745,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTapi-register"
-               value="boyer.fabian@example.net"
+               value="marques.murray@example.org"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address.</p>
@@ -740,7 +755,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="POSTapi-register"
-               value=""
+               value="lvjav"
                data-component="body" hidden>
     <br>
 <p>Must be at least 6 characters.</p>
@@ -964,26 +979,26 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;title&quot;: &quot;Mr.&quot;,
+            &quot;title&quot;: &quot;Dr.&quot;,
             &quot;type&quot;: {
-                &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;MidWife&quot;
+                &quot;id&quot;: 7,
+                &quot;name&quot;: &quot;Pharmacist&quot;
             },
             &quot;user&quot;: {
-                &quot;name&quot;: &quot;Prof. Camron Beer PhD&quot;,
-                &quot;email&quot;: &quot;wilma.purdy@example.com&quot;,
+                &quot;name&quot;: &quot;Gonzalo Hammes&quot;,
+                &quot;email&quot;: &quot;pat.rempel@example.net&quot;,
                 &quot;display_picture&quot;: null
             }
         },
         {
             &quot;title&quot;: &quot;Prof.&quot;,
             &quot;type&quot;: {
-                &quot;id&quot;: 6,
+                &quot;id&quot;: 8,
                 &quot;name&quot;: &quot;Nurse&quot;
             },
             &quot;user&quot;: {
-                &quot;name&quot;: &quot;Angel Christiansen&quot;,
-                &quot;email&quot;: &quot;mohr.maynard@example.net&quot;,
+                &quot;name&quot;: &quot;Shea Monahan&quot;,
+                &quot;email&quot;: &quot;breana77@example.net&quot;,
                 &quot;display_picture&quot;: null
             }
         }
@@ -1049,8 +1064,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"\",
-    \"type\": \"cupiditate\"
+    \"title\": \"a\",
+    \"type\": \"nobis\"
 }"
 </code></pre></div>
 
@@ -1066,8 +1081,8 @@ const headers = {
 };
 
 let body = {
-    "title": "",
-    "type": "cupiditate"
+    "title": "a",
+    "type": "nobis"
 };
 
 fetch(url, {
@@ -1125,7 +1140,7 @@ fetch(url, {
                 <input type="text"
                name="title"
                data-endpoint="POSTapi-specialists"
-               value=""
+               value="a"
                data-component="body" hidden>
     <br>
 <p>Must be at least 1 characters.</p>
@@ -1135,7 +1150,7 @@ fetch(url, {
                 <input type="text"
                name="type"
                data-endpoint="POSTapi-specialists"
-               value="cupiditate"
+               value="nobis"
                data-component="body" hidden>
     <br>
 
@@ -1155,14 +1170,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://medhive-mvp.herokuapp.com/api/specialists/5" \
+    --get "http://medhive-mvp.herokuapp.com/api/specialists/8" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://medhive-mvp.herokuapp.com/api/specialists/5"
+    "http://medhive-mvp.herokuapp.com/api/specialists/8"
 );
 
 const headers = {
@@ -1241,7 +1256,7 @@ access-control-allow-origin: *
                 <input type="number"
                name="id"
                data-endpoint="GETapi-specialists--id-"
-               value="5"
+               value="8"
                data-component="url" hidden>
     <br>
 <p>The ID of the specialist.</p>
@@ -1265,9 +1280,9 @@ access-control-allow-origin: *
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"specialist\": \"sit\",
-    \"title\": \"adipisci\",
-    \"type\": \"ea\"
+    \"specialist\": \"exercitationem\",
+    \"title\": \"voluptas\",
+    \"type\": \"ut\"
 }"
 </code></pre></div>
 
@@ -1283,9 +1298,9 @@ const headers = {
 };
 
 let body = {
-    "specialist": "sit",
-    "title": "adipisci",
-    "type": "ea"
+    "specialist": "exercitationem",
+    "title": "voluptas",
+    "type": "ut"
 };
 
 fetch(url, {
@@ -1354,7 +1369,7 @@ fetch(url, {
                 <input type="text"
                name="specialist"
                data-endpoint="PUTapi-specialists--id-"
-               value="sit"
+               value="exercitationem"
                data-component="body" hidden>
     <br>
 
@@ -1364,7 +1379,7 @@ fetch(url, {
                 <input type="text"
                name="title"
                data-endpoint="PUTapi-specialists--id-"
-               value="adipisci"
+               value="voluptas"
                data-component="body" hidden>
     <br>
 
@@ -1374,7 +1389,7 @@ fetch(url, {
                 <input type="text"
                name="type"
                data-endpoint="PUTapi-specialists--id-"
-               value="ea"
+               value="ut"
                data-component="body" hidden>
     <br>
 
@@ -1425,22 +1440,20 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;name&quot;: &quot;Fay-Ankunding&quot;,
-            &quot;address&quot;: &quot;760 Hailie Key Apt. 031\nLaviniastad, VA 27924-1060&quot;,
+            &quot;name&quot;: &quot;Lockman-O'Kon&quot;,
+            &quot;address&quot;: &quot;237 Elouise Glen\nChristiansenshire, OR 39706-4624&quot;,
             &quot;type&quot;: {
-                &quot;id&quot;: 6,
+                &quot;id&quot;: 8,
                 &quot;name&quot;: &quot;Lab&quot;
-            },
-            &quot;user&quot;: null
+            }
         },
         {
-            &quot;name&quot;: &quot;Schoen-Tremblay&quot;,
-            &quot;address&quot;: &quot;9932 Jacobs Manors\nEdgarberg, MT 62103&quot;,
+            &quot;name&quot;: &quot;Jerde-Walter&quot;,
+            &quot;address&quot;: &quot;65631 Vicente Lodge\nBaileyview, MI 92197-2826&quot;,
             &quot;type&quot;: {
-                &quot;id&quot;: 7,
+                &quot;id&quot;: 9,
                 &quot;name&quot;: &quot;Clinic&quot;
-            },
-            &quot;user&quot;: null
+            }
         }
     ]
 }</code>
@@ -1504,9 +1517,9 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"cxu\",
-    \"address\": \"v\",
-    \"type\": 2777.74
+    \"name\": \"zb\",
+    \"address\": \"\",
+    \"type\": 403058.97304
 }"
 </code></pre></div>
 
@@ -1522,9 +1535,9 @@ const headers = {
 };
 
 let body = {
-    "name": "cxu",
-    "address": "v",
-    "type": 2777.74
+    "name": "zb",
+    "address": "",
+    "type": 403058.97304
 };
 
 fetch(url, {
@@ -1536,7 +1549,33 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-facilities">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;name&quot;: &quot;Russel, Gleason and O'Reilly&quot;,
+            &quot;address&quot;: &quot;6523 Sarah Lodge Suite 005\nO'Connellview, HI 11377&quot;,
+            &quot;type&quot;: {
+                &quot;id&quot;: 10,
+                &quot;name&quot;: &quot;Pharmacy&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Gleichner, Heathcote and Murray&quot;,
+            &quot;address&quot;: &quot;2843 Franco Point Suite 669\nNorth Lizeth, KY 53657&quot;,
+            &quot;type&quot;: {
+                &quot;id&quot;: 11,
+                &quot;name&quot;: &quot;Pharmacy&quot;
+            }
+        }
+    ]
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-facilities" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-facilities"></span>:
@@ -1582,7 +1621,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-facilities"
-               value="cxu"
+               value="zb"
                data-component="body" hidden>
     <br>
 <p>Must be at least 3 characters.</p>
@@ -1592,7 +1631,7 @@ fetch(url, {
                 <input type="text"
                name="address"
                data-endpoint="POSTapi-facilities"
-               value="v"
+               value=""
                data-component="body" hidden>
     <br>
 <p>Must be at least 3 characters.</p>
@@ -1602,7 +1641,7 @@ fetch(url, {
                 <input type="number"
                name="type"
                data-endpoint="POSTapi-facilities"
-               value="2777.74"
+               value="403058.97304"
                data-component="body" hidden>
     <br>
 
@@ -1738,21 +1777,21 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://medhive-mvp.herokuapp.com/api/facilities/20" \
+    "http://medhive-mvp.herokuapp.com/api/facilities/10" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"facility\": \"soluta\",
-    \"name\": \"iure\",
-    \"address\": \"et\",
-    \"type\": \"quo\"
+    \"facility\": \"doloribus\",
+    \"name\": \"aut\",
+    \"address\": \"corporis\",
+    \"type\": \"et\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://medhive-mvp.herokuapp.com/api/facilities/20"
+    "http://medhive-mvp.herokuapp.com/api/facilities/10"
 );
 
 const headers = {
@@ -1761,10 +1800,10 @@ const headers = {
 };
 
 let body = {
-    "facility": "soluta",
-    "name": "iure",
-    "address": "et",
-    "type": "quo"
+    "facility": "doloribus",
+    "name": "aut",
+    "address": "corporis",
+    "type": "et"
 };
 
 fetch(url, {
@@ -1822,7 +1861,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="PUTapi-facilities--id-"
-               value="20"
+               value="10"
                data-component="url" hidden>
     <br>
 <p>The ID of the facility.</p>
@@ -1833,7 +1872,7 @@ fetch(url, {
                 <input type="text"
                name="facility"
                data-endpoint="PUTapi-facilities--id-"
-               value="soluta"
+               value="doloribus"
                data-component="body" hidden>
     <br>
 
@@ -1843,7 +1882,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="PUTapi-facilities--id-"
-               value="iure"
+               value="aut"
                data-component="body" hidden>
     <br>
 
@@ -1853,7 +1892,7 @@ fetch(url, {
                 <input type="text"
                name="address"
                data-endpoint="PUTapi-facilities--id-"
-               value="et"
+               value="corporis"
                data-component="body" hidden>
     <br>
 
@@ -1863,7 +1902,7 @@ fetch(url, {
                 <input type="text"
                name="type"
                data-endpoint="PUTapi-facilities--id-"
-               value="quo"
+               value="et"
                data-component="body" hidden>
     <br>
 
@@ -1879,6 +1918,722 @@ fetch(url, {
 
         </p>
         </form>
+
+            <h2 id="endpoints-GETapi-openings">Get all openings</h2>
+
+<p>
+</p>
+
+<p>Display a listing of the resource.</p>
+
+<span id="example-requests-GETapi-openings">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://medhive-mvp.herokuapp.com/api/openings" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://medhive-mvp.herokuapp.com/api/openings"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-openings">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 3,
+            &quot;for&quot;: 9,
+            &quot;facility&quot;: {
+                &quot;id&quot;: 7,
+                &quot;name&quot;: &quot;Wisozk-Kessler&quot;,
+                &quot;address&quot;: &quot;7163 Herman Squares Suite 110\nWest Deshaun, CT 43907&quot;,
+                &quot;user_id&quot;: 8,
+                &quot;type_id&quot;: 12,
+                &quot;created_at&quot;: &quot;2021-12-24T19:28:54.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2021-12-24T19:28:54.000000Z&quot;
+            },
+            &quot;type&quot;: true,
+            &quot;is_active&quot;: true
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;for&quot;: 10,
+            &quot;facility&quot;: {
+                &quot;id&quot;: 8,
+                &quot;name&quot;: &quot;Mosciski-Cummerata&quot;,
+                &quot;address&quot;: &quot;242 Daphne Lodge Apt. 074\nJodyborough, DE 58257&quot;,
+                &quot;user_id&quot;: 9,
+                &quot;type_id&quot;: 13,
+                &quot;created_at&quot;: &quot;2021-12-24T19:28:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2021-12-24T19:28:55.000000Z&quot;
+            },
+            &quot;type&quot;: true,
+            &quot;is_active&quot;: true
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-openings" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-openings"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-openings"></code></pre>
+</span>
+<span id="execution-error-GETapi-openings" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-openings"></code></pre>
+</span>
+<form id="form-GETapi-openings" data-method="GET"
+      data-path="api/openings"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-openings', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-openings"
+                    onclick="tryItOut('GETapi-openings');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-openings"
+                    onclick="cancelTryOut('GETapi-openings');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-openings" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/openings</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-openings">Store a newly created opening resource in storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-openings">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://medhive-mvp.herokuapp.com/api/openings" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"for\": \"minus\",
+    \"facility\": \"rerum\",
+    \"type\": false
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://medhive-mvp.herokuapp.com/api/openings"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "for": "minus",
+    "facility": "rerum",
+    "type": false
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-openings">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 5,
+            &quot;for&quot;: 11,
+            &quot;facility&quot;: {
+                &quot;id&quot;: 9,
+                &quot;name&quot;: &quot;Sauer, Ledner and Zemlak&quot;,
+                &quot;address&quot;: &quot;2144 Sunny Brook Suite 953\nSouth Gracielachester, SC 52787-0595&quot;,
+                &quot;user_id&quot;: 10,
+                &quot;type_id&quot;: 14,
+                &quot;created_at&quot;: &quot;2021-12-24T19:28:57.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2021-12-24T19:28:57.000000Z&quot;
+            },
+            &quot;type&quot;: true,
+            &quot;is_active&quot;: true
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;for&quot;: 12,
+            &quot;facility&quot;: {
+                &quot;id&quot;: 10,
+                &quot;name&quot;: &quot;Conn and Sons&quot;,
+                &quot;address&quot;: &quot;265 Lon Creek Apt. 279\nHipolitoton, NV 85226-0389&quot;,
+                &quot;user_id&quot;: 11,
+                &quot;type_id&quot;: 15,
+                &quot;created_at&quot;: &quot;2021-12-24T19:28:58.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2021-12-24T19:28:58.000000Z&quot;
+            },
+            &quot;type&quot;: true,
+            &quot;is_active&quot;: true
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-openings" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-openings"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-openings"></code></pre>
+</span>
+<span id="execution-error-POSTapi-openings" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-openings"></code></pre>
+</span>
+<form id="form-POSTapi-openings" data-method="POST"
+      data-path="api/openings"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-openings', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-openings"
+                    onclick="tryItOut('POSTapi-openings');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-openings"
+                    onclick="cancelTryOut('POSTapi-openings');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-openings" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/openings</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>for</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="for"
+               data-endpoint="POSTapi-openings"
+               value="minus"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>facility</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="facility"
+               data-endpoint="POSTapi-openings"
+               value="rerum"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>type</code></b>&nbsp;&nbsp;<small>boolean</small>  &nbsp;
+                <label data-endpoint="POSTapi-openings" hidden>
+            <input type="radio" name="type"
+                   value="true"
+                   data-endpoint="POSTapi-openings"
+                   data-component="body"
+            >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-openings" hidden>
+            <input type="radio" name="type"
+                   value="false"
+                   data-endpoint="POSTapi-openings"
+                   data-component="body"
+            >
+            <code>false</code>
+        </label>
+    <br>
+
+        </p>
+        </form>
+
+            <h2 id="endpoints-GETapi-openings--id-">Display the specified opening resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-openings--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://medhive-mvp.herokuapp.com/api/openings/19" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://medhive-mvp.herokuapp.com/api/openings/19"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-openings--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 7,
+            &quot;for&quot;: 13,
+            &quot;facility&quot;: {
+                &quot;id&quot;: 11,
+                &quot;name&quot;: &quot;Klocko LLC&quot;,
+                &quot;address&quot;: &quot;5125 Littel Valley\nFadelmouth, NC 96122-3383&quot;,
+                &quot;user_id&quot;: 12,
+                &quot;type_id&quot;: 16,
+                &quot;created_at&quot;: &quot;2021-12-24T19:28:59.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2021-12-24T19:28:59.000000Z&quot;
+            },
+            &quot;type&quot;: true,
+            &quot;is_active&quot;: true
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;for&quot;: 14,
+            &quot;facility&quot;: {
+                &quot;id&quot;: 12,
+                &quot;name&quot;: &quot;Wuckert, Turcotte and Metz&quot;,
+                &quot;address&quot;: &quot;2171 Weldon Trace Suite 028\nRalphview, DE 92701-8758&quot;,
+                &quot;user_id&quot;: 13,
+                &quot;type_id&quot;: 17,
+                &quot;created_at&quot;: &quot;2021-12-24T19:29:00.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2021-12-24T19:29:00.000000Z&quot;
+            },
+            &quot;type&quot;: true,
+            &quot;is_active&quot;: true
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-openings--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-openings--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-openings--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-openings--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-openings--id-"></code></pre>
+</span>
+<form id="form-GETapi-openings--id-" data-method="GET"
+      data-path="api/openings/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-openings--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-openings--id-"
+                    onclick="tryItOut('GETapi-openings--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-openings--id-"
+                    onclick="cancelTryOut('GETapi-openings--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-openings--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/openings/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-openings--id-"
+               value="19"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the opening.</p>
+            </p>
+                    </form>
+
+            <h2 id="endpoints-PUTapi-openings--id-">Update the specified opening resource in storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-openings--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://medhive-mvp.herokuapp.com/api/openings/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"for\": \"sint\",
+    \"facility\": \"numquam\",
+    \"type\": false,
+    \"is_active\": true
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://medhive-mvp.herokuapp.com/api/openings/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "for": "sint",
+    "facility": "numquam",
+    "type": false,
+    "is_active": true
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-openings--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 9,
+            &quot;for&quot;: 15,
+            &quot;facility&quot;: {
+                &quot;id&quot;: 13,
+                &quot;name&quot;: &quot;Klein-Smitham&quot;,
+                &quot;address&quot;: &quot;289 Vicenta Spur Apt. 626\nSouth Mistyfurt, CO 74958-3552&quot;,
+                &quot;user_id&quot;: 14,
+                &quot;type_id&quot;: 18,
+                &quot;created_at&quot;: &quot;2021-12-24T19:29:02.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2021-12-24T19:29:02.000000Z&quot;
+            },
+            &quot;type&quot;: true,
+            &quot;is_active&quot;: true
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;for&quot;: 16,
+            &quot;facility&quot;: {
+                &quot;id&quot;: 14,
+                &quot;name&quot;: &quot;Fahey, Hansen and Carroll&quot;,
+                &quot;address&quot;: &quot;5849 Jermaine Meadows\nAnselside, VT 87375&quot;,
+                &quot;user_id&quot;: 15,
+                &quot;type_id&quot;: 19,
+                &quot;created_at&quot;: &quot;2021-12-24T19:29:03.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2021-12-24T19:29:03.000000Z&quot;
+            },
+            &quot;type&quot;: true,
+            &quot;is_active&quot;: true
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-openings--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-openings--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-openings--id-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-openings--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-openings--id-"></code></pre>
+</span>
+<form id="form-PUTapi-openings--id-" data-method="PUT"
+      data-path="api/openings/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-openings--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-openings--id-"
+                    onclick="tryItOut('PUTapi-openings--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-openings--id-"
+                    onclick="cancelTryOut('PUTapi-openings--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-openings--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/openings/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="PUTapi-openings--id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the opening.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>for</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="for"
+               data-endpoint="PUTapi-openings--id-"
+               value="sint"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>facility</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="facility"
+               data-endpoint="PUTapi-openings--id-"
+               value="numquam"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>type</code></b>&nbsp;&nbsp;<small>boolean</small>  &nbsp;
+                <label data-endpoint="PUTapi-openings--id-" hidden>
+            <input type="radio" name="type"
+                   value="true"
+                   data-endpoint="PUTapi-openings--id-"
+                   data-component="body"
+            >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTapi-openings--id-" hidden>
+            <input type="radio" name="type"
+                   value="false"
+                   data-endpoint="PUTapi-openings--id-"
+                   data-component="body"
+            >
+            <code>false</code>
+        </label>
+    <br>
+
+        </p>
+                <p>
+            <b><code>is_active</code></b>&nbsp;&nbsp;<small>boolean</small>  &nbsp;
+                <label data-endpoint="PUTapi-openings--id-" hidden>
+            <input type="radio" name="is_active"
+                   value="true"
+                   data-endpoint="PUTapi-openings--id-"
+                   data-component="body"
+            >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTapi-openings--id-" hidden>
+            <input type="radio" name="is_active"
+                   value="false"
+                   data-endpoint="PUTapi-openings--id-"
+                   data-component="body"
+            >
+            <code>false</code>
+        </label>
+    <br>
+
+        </p>
+        </form>
+
+            <h2 id="endpoints-DELETEapi-openings--id-">Remove the specified resource from storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-openings--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://medhive-mvp.herokuapp.com/api/openings/7" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://medhive-mvp.herokuapp.com/api/openings/7"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-openings--id-">
+</span>
+<span id="execution-results-DELETEapi-openings--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-openings--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-openings--id-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-openings--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-openings--id-"></code></pre>
+</span>
+<form id="form-DELETEapi-openings--id-" data-method="DELETE"
+      data-path="api/openings/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-openings--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-openings--id-"
+                    onclick="tryItOut('DELETEapi-openings--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-openings--id-"
+                    onclick="cancelTryOut('DELETEapi-openings--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-openings--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/openings/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="DELETEapi-openings--id-"
+               value="7"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the opening.</p>
+            </p>
+                    </form>
 
     
 

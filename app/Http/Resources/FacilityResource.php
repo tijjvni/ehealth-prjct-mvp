@@ -21,8 +21,7 @@ class FacilityResource extends JsonResource
 			'name' => $this->name,
 			'address' => $this->address,
             'type' => FacilityTypeResource::make($this->type),
-            'user' => UserResource::make($this->user),
-        ];
-        
+
+        ];        
     }
 }

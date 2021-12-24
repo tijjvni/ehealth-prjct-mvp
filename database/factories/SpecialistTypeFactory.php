@@ -18,7 +18,8 @@ class SpecialistTypeFactory extends Factory
 
         return [
             //
+			// 'name' => $this->name,
             'name' => $specialistTypes[array_rand($specialistTypes,1)],           
-        ];
+        ];    
     }
 }
