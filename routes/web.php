@@ -66,8 +66,12 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function(){
     
-    Route::get('/doccs',function(){
+    Route::get('/apidocs',function(){
         return view('scribe.index');
+    });
+
+    Route::get('/erd',function(){
+        return view('docs.erd');
     });
 
     Route::get('/home',function(){
